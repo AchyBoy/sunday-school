@@ -109,4 +109,14 @@ to_pdf(page(TITLE, "".join(body)), os.path.join(out, "1.2 Teacher - Dealing With
 for role in HOW:
     to_pdf(part_sheet(TITLE, "The Birthday Candles", role, HOW[role], CANDLES),
            os.path.join(out, f"Part - {role}.pdf"))
+# FINAL = he has signed off; until then the site shows the marked-up web copy first.
+FINAL = False
+open(os.path.join(HERE, "index.html"), "w").write(web_page(
+    os.path.basename(HERE), TITLE, "".join(body),
+    [f"Part - {r}.pdf" for r in HOW], final=FINAL))
+mark = os.path.join(HERE, "FINAL")  # build_index.py reads this
+if FINAL:
+    open(mark, "w").close()
+elif os.path.exists(mark):
+    os.remove(mark)
 print("done")

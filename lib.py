@@ -179,3 +179,131 @@ def part_sheet(lesson_title, play_title, role, how, lines):
             f'<p style="color:#666;font-size:12pt">Gray is your cue. When you hear it, read the next line in big print.</p>'
             f"{''.join(out)}</div>")
     return page(role, body)
+
+
+# ---- web copy: the teacher copy as a page that looks like the PDF, with ✎ notes ----
+# Notes go to the same store as the book's (api.jobhubgo.com/api/yam/<key>-ss). The key is
+# never in this repo: the page reads it from ?c=<key>, or from the book site's saved key
+# (same origin, achyboy.github.io), so his phone already has it. No key = no pencils.
+WEB_JS = r"""
+const API = "https://api.jobhubgo.com/api/yam/";
+const LESSON = document.body.dataset.lesson, BUILD = Number(document.body.dataset.build);
+function lsGet(k) { try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } }
+(function () { const k = new URLSearchParams(location.search).get("c");
+  if (k) localStorage.setItem("ss.ckey", JSON.stringify(k)); })();
+const BASE = lsGet("ss.ckey") || lsGet("wyl.ckey");
+const CKEY = BASE ? BASE + "-ss" : null;
+const $ = (id) => document.getElementById(id);
+let comments = [];
+const TARGETS = ".doc h1, .doc .sub, .doc h2, .doc p, .doc li, .doc .note, .doc .candy, .doc .scr .ref, .doc .scr .v, .doc .stitle, .doc .cast, .doc .scene, .doc .dir, .doc .ln";
+const mineAt = (i) => comments.filter(c => c.lesson === LESSON && c.i === i);
+async function load() {
+  try { const j = await (await fetch(API + CKEY)).json(); comments = (j.data && j.data.comments) || []; } catch {}
+  mark();
+}
+async function save(mutate) {
+  for (let n = 0; n < 2; n++) {
+    let cur = [];
+    try { const j = await (await fetch(API + CKEY)).json(); cur = (j.data && j.data.comments) || []; } catch {}
+    const next = mutate(cur.slice());
+    try {
+      const r = await fetch(API + CKEY, { method: "PUT", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ data: { comments: next }, updatedAt: Date.now() }) });
+      if ((await r.json()).ok) { comments = next; mark(); return true; }
+    } catch {}
+  }
+  return false;
+}
+function mark() {
+  document.querySelectorAll(".pen").forEach(b => b.classList.toggle("has", mineAt(Number(b.dataset.i)).length > 0));
+  const n = comments.filter(c => c.lesson === LESSON).length;
+  $("count").textContent = n ? n + " note" + (n > 1 ? "s" : "") + " on this lesson" : "";
+}
+let at = null;
+function renderOld() {
+  const mine = mineAt(at.i);
+  $("cmtOld").innerHTML = mine.map(c => `<div class="old"><span></span><button data-id="${c.id}">Delete</button></div>`).join("");
+  $("cmtOld").querySelectorAll(".old span").forEach((el, k) => el.textContent = mine[k].text);
+  $("cmtOld").querySelectorAll("button").forEach(b => b.onclick = async () => {
+    $("cmtStatus").textContent = "Deleting...";
+    await save(cur => cur.filter(c => c.id !== b.dataset.id));
+    $("cmtStatus").textContent = ""; renderOld();
+  });
+}
+function open(i, text) {
+  at = { i, quote: text.slice(0, 80) };
+  $("cmtQuote").textContent = "“" + text.slice(0, 90) + (text.length > 90 ? "...”" : "”");
+  $("cmtText").value = ""; $("cmtStatus").textContent = "";
+  renderOld(); $("cmt").classList.add("open"); $("cmtText").focus();
+}
+$("cmtClose").onclick = () => $("cmt").classList.remove("open");
+$("cmtSave").onclick = async () => {
+  const text = $("cmtText").value.trim();
+  if (!text) return;
+  $("cmtStatus").textContent = "Saving...";
+  const c = { id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), lesson: LESSON, i: at.i,
+              quote: at.quote, text, at: new Date().toISOString(), v: BUILD };
+  if (await save(cur => cur.concat([c]))) { $("cmtText").value = ""; $("cmtStatus").textContent = "Saved"; renderOld(); }
+  else $("cmtStatus").textContent = "Didn't save, try again";
+};
+if (CKEY) {
+  document.body.classList.add("editing");
+  document.querySelectorAll(TARGETS).forEach((el, i) => {
+    const text = el.textContent.trim();
+    const b = document.createElement("button");
+    b.className = "pen"; b.textContent = "✎"; b.dataset.i = i;
+    b.setAttribute("aria-label", "Note on this");
+    b.onclick = (e) => { e.stopPropagation(); open(i, text); };
+    el.appendChild(b);
+  });
+  load();
+}
+"""
+
+WEB_CSS = """
+html { background: #d9d4cc; }
+body { margin: 0; padding: 0 0 40vh; }
+.top { position: sticky; top: 0; z-index: 5; background: #8a4b2a; color: #fff; font: 600 14px -apple-system, Helvetica, sans-serif;
+       padding: 10px 14px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.top a { color: #fff; } .top .draft { background: #fff; color: #8a4b2a; border-radius: 5px; padding: 2px 7px; font-weight: 800; }
+.top #count { margin-left: auto; opacity: .9; }
+.doc { background: #fff; max-width: 7.3in; margin: 14px auto; padding: 0.55in 0.6in; box-shadow: 0 2px 10px #0003; }
+@media (max-width: 600px) { .doc { margin: 0; padding: 18px 14px; font-size: 12pt; } .who { min-width: 64pt; } .dir { margin-left: 0; } }
+.parts { max-width: 7.3in; margin: 14px auto; font: 15px -apple-system, Helvetica, sans-serif; padding: 0 10px; }
+.parts a { display: inline-block; background: #fff; border: 1px solid #b9a58e; border-radius: 8px; padding: 8px 11px; margin: 4px 4px 0 0;
+           color: #111; text-decoration: none; font-weight: 600; }
+.pen { display: none; border: 0; background: none; font-size: 15px; color: #8a4b2a; opacity: .45; padding: 0 5px; cursor: pointer;
+       font-family: -apple-system, sans-serif; font-weight: normal; vertical-align: baseline; }
+.editing .pen { display: inline; } .pen.has { opacity: 1; color: #c2185b; font-weight: 800; }
+.v .pen, .ln .pen { align-self: flex-start; }
+.cmt { position: fixed; inset: auto 0 0 0; z-index: 60; background: #fff; border-top: 1px solid #ccc; display: none;
+       padding: 16px 18px calc(env(safe-area-inset-bottom) + 16px); font: 16px -apple-system, Helvetica, sans-serif;
+       box-shadow: 0 -10px 30px rgba(0,0,0,.2); max-height: 75vh; overflow: auto; }
+.cmt.open { display: block; }
+.cmt .quote { color: #666; font-style: italic; margin-bottom: 10px; }
+.cmt .old { border-left: 3px solid #c2185b; padding: 4px 10px; margin: 8px 0; display: flex; gap: 10px; justify-content: space-between; }
+.cmt .old button, .cmt .acts button { border: 0; background: none; font: inherit; color: #666; }
+.cmt textarea { width: 100%; box-sizing: border-box; min-height: 90px; font: inherit; border: 1px solid #ccc; border-radius: 8px; padding: 8px; }
+.cmt .acts { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
+.cmt .acts .status { flex: 1; color: #666; }
+.cmt .acts .save { background: #8a4b2a; color: #fff; border-radius: 8px; padding: 8px 18px; font-weight: 700; }
+"""
+
+
+def web_page(lesson_id, title, body, parts=(), final=False):
+    """lessons/<id>/index.html: the teacher copy on screen, same styles as the PDF, ✎ on every block."""
+    import time
+    tag = "" if final else '<span class="draft">DRAFT</span>'
+    plinks = "".join(f'<a href="pdf/{urllib.parse.quote(f)}">{esc(f[7:-4])}</a>' for f in parts)
+    return (f"<!doctype html><html><head><meta charset='utf-8'>"
+            f"<meta name='viewport' content='width=device-width,initial-scale=1'><meta name='robots' content='noindex'>"
+            f"<title>{esc(title)}</title><style>{CSS}{WEB_CSS}</style></head>"
+            f"<body data-lesson='{esc(lesson_id)}' data-build='{int(time.time())}'>"
+            f"<div class='top'><a href='../../'>&larr; Lessons</a>{tag}<span id='count'></span></div>"
+            f"<div class='doc'>{body}</div>"
+            + (f"<div class='parts'><b>Act-out part sheets (PDF)</b><br>{plinks}</div>" if plinks else "")
+            + "<div class='cmt' id='cmt'><div class='quote' id='cmtQuote'></div><div id='cmtOld'></div>"
+              "<textarea id='cmtText' placeholder='Your edit or note on this part'></textarea>"
+              "<div class='acts'><button id='cmtClose'>Close</button><span class='status' id='cmtStatus'></span>"
+              "<button class='save' id='cmtSave'>Save</button></div></div>"
+            f"<script>{WEB_JS}</script></body></html>")

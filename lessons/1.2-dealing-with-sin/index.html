@@ -1,0 +1,145 @@
+<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><meta name='robots' content='noindex'><title>Lesson 1.2: Dealing With Our Sin</title><style>
+@page { size: Letter; margin: 0.55in 0.6in; }
+body { font-family: -apple-system, Helvetica, Arial, sans-serif; font-size: 13.5pt;
+       line-height: 1.38; color: #111; }
+h1 { font-size: 24pt; margin: 0 0 2pt; }
+.sub { font-size: 12pt; color: #444; margin-bottom: 10pt; }
+h2 { font-size: 16pt; margin: 18pt 0 6pt; padding-bottom: 3pt;
+     border-bottom: 2px solid #8a4b2a; break-after: avoid; }
+.min { font-size: 11pt; color: #8a4b2a; font-weight: normal; }
+p { margin: 5pt 0; }
+ul { margin: 4pt 0; padding-left: 18pt; } li { margin: 3pt 0; }
+.scr { background: #f4efe6; border-left: 5px solid #8a4b2a; padding: 7pt 10pt;
+       margin: 8pt 0; break-inside: avoid; font-family: Georgia, serif; font-size: 14.5pt; }
+.ref { font-family: -apple-system, Helvetica, sans-serif; font-weight: 700;
+       font-size: 12.5pt; color: #8a4b2a; margin-bottom: 3pt; }
+.v { display: flex; gap: 8pt; margin: 3pt 0; }
+.n { font-weight: 700; min-width: 18pt; text-align: right; color: #8a4b2a;
+     font-family: -apple-system, Helvetica, sans-serif; font-size: 12pt; padding-top: 2pt; }
+.candy { border: 2.5px solid #c2185b; border-radius: 8pt; padding: 7pt 10pt;
+         margin: 10pt 0; break-inside: avoid; }
+.cq { font-weight: 700; font-size: 14.5pt; }
+.ca { color: #444; margin-top: 3pt; }
+.note { background: #eef3f8; padding: 6pt 10pt; border-radius: 6pt; margin: 8pt 0;
+        break-inside: avoid; }
+.script { margin: 8pt 0; }
+.stitle { font-weight: 800; font-size: 15pt; }
+.cast { font-size: 12pt; color: #333; margin: 2pt 0 6pt; }
+.scene { font-weight: 800; margin: 10pt 0 3pt; color: #8a4b2a; break-after: avoid; }
+.dir { font-style: italic; color: #555; margin: 3pt 0 3pt 92pt; }
+.ln { display: flex; gap: 8pt; margin: 4pt 0; break-inside: avoid; }
+.who { min-width: 84pt; font-weight: 800; font-size: 11.5pt; text-transform: uppercase;
+       padding-top: 2pt; }
+.ln.nar .say { font-family: Georgia, serif; font-size: 14.5pt; }
+.ln.role .say { font-family: Georgia, serif; font-size: 14.5pt; font-weight: 700; }
+.ln.role .who { color: #c2185b; }
+.pb { break-before: page; }
+/* part sheets */
+.part h1 { font-size: 40pt; margin-bottom: 0; }
+.part .ln .say { font-size: 20pt; }
+.part .cue .say { font-size: 13pt; font-weight: normal; color: #666; font-style: italic; }
+.part .cue .who { color: #999; }
+.part .mine .who { color: #c2185b; font-size: 14pt; }
+.part .mine .say { font-weight: 800; }
+.part .dir { margin-left: 0; font-size: 14pt; }
+
+html { background: #d9d4cc; }
+body { margin: 0; padding: 0 0 40vh; }
+.top { position: sticky; top: 0; z-index: 5; background: #8a4b2a; color: #fff; font: 600 14px -apple-system, Helvetica, sans-serif;
+       padding: 10px 14px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.top a { color: #fff; } .top .draft { background: #fff; color: #8a4b2a; border-radius: 5px; padding: 2px 7px; font-weight: 800; }
+.top #count { margin-left: auto; opacity: .9; }
+.doc { background: #fff; max-width: 7.3in; margin: 14px auto; padding: 0.55in 0.6in; box-shadow: 0 2px 10px #0003; }
+@media (max-width: 600px) { .doc { margin: 0; padding: 18px 14px; font-size: 12pt; } .who { min-width: 64pt; } .dir { margin-left: 0; } }
+.parts { max-width: 7.3in; margin: 14px auto; font: 15px -apple-system, Helvetica, sans-serif; padding: 0 10px; }
+.parts a { display: inline-block; background: #fff; border: 1px solid #b9a58e; border-radius: 8px; padding: 8px 11px; margin: 4px 4px 0 0;
+           color: #111; text-decoration: none; font-weight: 600; }
+.pen { display: none; border: 0; background: none; font-size: 15px; color: #8a4b2a; opacity: .45; padding: 0 5px; cursor: pointer;
+       font-family: -apple-system, sans-serif; font-weight: normal; vertical-align: baseline; }
+.editing .pen { display: inline; } .pen.has { opacity: 1; color: #c2185b; font-weight: 800; }
+.v .pen, .ln .pen { align-self: flex-start; }
+.cmt { position: fixed; inset: auto 0 0 0; z-index: 60; background: #fff; border-top: 1px solid #ccc; display: none;
+       padding: 16px 18px calc(env(safe-area-inset-bottom) + 16px); font: 16px -apple-system, Helvetica, sans-serif;
+       box-shadow: 0 -10px 30px rgba(0,0,0,.2); max-height: 75vh; overflow: auto; }
+.cmt.open { display: block; }
+.cmt .quote { color: #666; font-style: italic; margin-bottom: 10px; }
+.cmt .old { border-left: 3px solid #c2185b; padding: 4px 10px; margin: 8px 0; display: flex; gap: 10px; justify-content: space-between; }
+.cmt .old button, .cmt .acts button { border: 0; background: none; font: inherit; color: #666; }
+.cmt textarea { width: 100%; box-sizing: border-box; min-height: 90px; font: inherit; border: 1px solid #ccc; border-radius: 8px; padding: 8px; }
+.cmt .acts { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
+.cmt .acts .status { flex: 1; color: #666; }
+.cmt .acts .save { background: #8a4b2a; color: #fff; border-radius: 8px; padding: 8px 18px; font-weight: 700; }
+</style></head><body data-lesson='1.2-dealing-with-sin' data-build='1792090848'><div class='top'><a href='../../'>&larr; Lessons</a><span class="draft">DRAFT</span><span id='count'></span></div><div class='doc'><h1>Lesson 1.2: Dealing With Our Sin</h1><div class="sub">Genesis 3 · Series 1: In the Beginning · About 20 minutes · Big idea: <b>Sorry is not enough. Repentance is turning around.</b></div><div class="scr"><div class="ref">Key verse: Luke 9:23</div><div class="v"><span class="n">23</span><span>And he said to them all, If any man will come after me, let him deny himself, and take up his cross daily, and follow me.</span></div></div><div class="note"><b>Bring:</b> candy · a cake or a paper plate "cake" with a few candles · the 4 candle part sheets printed</div><h2>1. Testimony <span class="min">2 min</span></h2><p>1 student (or a teacher on the rotation). If they need a prompt: <i>a time you said sorry, and then actually changed.</i></p><h2>2. Act it out: The Birthday Candles <span class="min">4 min</span></h2><div class="script"><div class="stitle">The Birthday Candles</div><div class="cast"><b>Birthday Kid</b>  · <b>Best Friend</b>  · <b>Parent</b>  · <b>Guests</b> (everyone else sings)</div><div class="scene">The party</div><div class="dir">Birthday Kid stands at the table. Guests gather around. Parent "lights" the candles.</div><div class="ln role"><span class="who">Parent</span><span class="say">Okay everybody, here comes the cake! Ready? One, two, three...</span></div><div class="ln role"><span class="who">Guests</span><span class="say">Happy birthday to you...</span></div><div class="dir">Best Friend cuts in front and blows out the candles.</div><div class="ln role"><span class="who">Birthday Kid</span><span class="say">Hey! What did you do that for?</span></div><div class="ln role"><span class="who">Best Friend</span><span class="say">Oh, I am so sorry. I shouldn't have done that.</span></div><div class="ln role"><span class="who">Birthday Kid</span><span class="say">It's okay. I forgive you.</span></div><div class="ln role"><span class="who">Parent</span><span class="say">Let's try again. One, two, three...</span></div><div class="ln role"><span class="who">Guests</span><span class="say">Happy birthday to you, happy birthday to you...</span></div><div class="dir">Best Friend cuts in again and blows out the candles.</div><div class="ln role"><span class="who">Birthday Kid</span><span class="say">Why did you do that?</span></div><div class="ln role"><span class="who">Best Friend</span><span class="say">I don't know. I just couldn't help myself. I'm sorry.</span></div><div class="ln role"><span class="who">Birthday Kid</span><span class="say">Fine. I forgive you. But don't do it again.</span></div><div class="ln role"><span class="who">Parent</span><span class="say">Last time. One, two, three...</span></div><div class="ln role"><span class="who">Guests</span><span class="say">Happy birthday to you, happy birthday dear friend, happy birthday...</span></div><div class="dir">Best Friend bursts in and blows out ALL the candles.</div><div class="ln role"><span class="who">Birthday Kid</span><span class="say">STOP IT!</span></div><div class="ln role"><span class="who">Best Friend</span><span class="say">I'm so sorry...</span></div><div class="ln role"><span class="who">Parent</span><span class="say">Forget it. I'm just cutting the cake. Worst birthday ever.</span></div></div><div class="candy"><div class="cq">🍬 1. He said sorry three times. Was he lying? Then what was missing?</div><div class="ca">Maybe he really was sorry. But he never CHANGED. Sorry is a feeling. Repentance is turning around.</div></div><h2>3. What happened in the garden <span class="min">6 min</span></h2><p>God made everything good, and He made man to walk with Him. He gave Adam one rule.</p><div class="scr"><div class="ref">Genesis 2:17</div><div class="v"><span class="n">17</span><span>But of the tree of the knowledge of good and evil, thou shalt not eat of it: for in the day that thou eatest thereof thou shalt surely die.</span></div></div><p>The serpent did not tell a flat lie. He twisted what God said: <i>"Did God really say?"</i> and <i>"You won't really die."</i></p><div class="scr"><div class="ref">Genesis 3:4-6</div><div class="v"><span class="n">4</span><span>And the serpent said unto the woman, Ye shall not surely die:</span></div><div class="v"><span class="n">5</span><span>For God doth know that in the day ye eat thereof, then your eyes shall be opened, and ye shall be as gods, knowing good and evil.</span></div><div class="v"><span class="n">6</span><span>And when the woman saw that the tree was good for food, and that it was pleasant to the eyes, and a tree to be desired to make one wise, she took of the fruit thereof, and did eat, and gave also unto her husband with her; and he did eat.</span></div></div><p>Now watch what they do when God comes walking.</p><div class="scr"><div class="ref">Genesis 3:8-13</div><div class="v"><span class="n">8</span><span>And they heard the voice of the LORD God walking in the garden in the cool of the day: and Adam and his wife hid themselves from the presence of the LORD God amongst the trees of the garden.</span></div><div class="v"><span class="n">9</span><span>And the LORD God called unto Adam, and said unto him, Where art thou?</span></div><div class="v"><span class="n">10</span><span>And he said, I heard thy voice in the garden, and I was afraid, because I was naked; and I hid myself.</span></div><div class="v"><span class="n">11</span><span>And he said, Who told thee that thou wast naked? Hast thou eaten of the tree, whereof I commanded thee that thou shouldest not eat?</span></div><div class="v"><span class="n">12</span><span>And the man said, The woman whom thou gavest to be with me, she gave me of the tree, and I did eat.</span></div><div class="v"><span class="n">13</span><span>And the LORD God said unto the woman, What is this that thou hast done? And the woman said, The serpent beguiled me, and I did eat.</span></div></div><div class="candy"><div class="cq">🍬 2. Count them. How many times did Adam or Eve say "I'm sorry"? And who did Adam blame?</div><div class="ca">ZERO. Adam blamed the woman, AND God: "the woman whom THOU gavest." Eve blamed the serpent. Follow up, no candy: <i>who do YOU blame?</i></div></div><h2>4. God made a way <span class="min">3 min</span></h2><p>Sin had to be judged, but God did not leave them there. He promised a Saviour from the woman's seed:</p><div class="scr"><div class="ref">Genesis 3:15</div><div class="v"><span class="n">15</span><span>And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel.</span></div></div><p>And He covered them. Fig leaves were their idea. God's covering cost a life:</p><div class="scr"><div class="ref">Genesis 3:21</div><div class="v"><span class="n">21</span><span>Unto Adam also and to his wife did the LORD God make coats of skins, and clothed them.</span></div></div><p>Repentance is not a one time thing. Paul said:</p><div class="scr"><div class="ref">1 Corinthians 15:31</div><div class="v"><span class="n">31</span><span>I protest by your rejoicing which I have in Christ Jesus our Lord, I die daily.</span></div></div><p>Every day we put our flesh (our selfish nature) back on the altar. That is the <i>daily</i> in Luke 9:23.</p><h2>5. Your story, or an illustration <span class="min">2 min</span></h2><p>Pick one: a crew guy who kept saying sorry for the same mistake, a time YOU had to stop apologizing and fix it, or a time hiding made it worse. <b>Or</b> <i>The Pilgrim's Progress</i> (John Bunyan): Christian flees the City of Destruction and his burden rolls off at the cross.</p><h2>6. What would you do? <span class="min">3 min</span></h2><div class="candy"><div class="cq">🍬 3. You lost your temper with your little brother Monday, Tuesday and Wednesday, and said sorry every time. It is Thursday morning. What do you do?</div><div class="ca">EVERYONE who answers gets candy. Look for turning around: pray first, walk away, go to God before it happens again.</div></div><div class="scr"><div class="ref">Acts 3:19</div><div class="v"><span class="n">19</span><span>Repent ye therefore, and be converted, that your sins may be blotted out, when the times of refreshing shall come from the presence of the Lord;</span></div></div><p><b>The big church:</b> the altar is where the church goes to repent. When you see people at the altar, now you know what is happening, and that it is for you too.</p><h2>Prayer <span class="min">1 min</span></h2><p><i>Jesus, we admit that we are sinners today. We recognize that we have missed the mark of your righteousness time and time again. We're asking for You to forgive us. More importantly, we commit to repenting of our sin. From this day forward we will work to turn away from things that do not please You. Please give us the strength to live victoriously.</i></p></div><div class='parts'><b>Act-out part sheets (PDF)</b><br><a href="pdf/Part%20-%20Birthday%20Kid.pdf">Birthday Kid</a><a href="pdf/Part%20-%20Best%20Friend.pdf">Best Friend</a><a href="pdf/Part%20-%20Parent.pdf">Parent</a><a href="pdf/Part%20-%20Guests.pdf">Guests</a></div><div class='cmt' id='cmt'><div class='quote' id='cmtQuote'></div><div id='cmtOld'></div><textarea id='cmtText' placeholder='Your edit or note on this part'></textarea><div class='acts'><button id='cmtClose'>Close</button><span class='status' id='cmtStatus'></span><button class='save' id='cmtSave'>Save</button></div></div><script>
+const API = "https://api.jobhubgo.com/api/yam/";
+const LESSON = document.body.dataset.lesson, BUILD = Number(document.body.dataset.build);
+function lsGet(k) { try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } }
+(function () { const k = new URLSearchParams(location.search).get("c");
+  if (k) localStorage.setItem("ss.ckey", JSON.stringify(k)); })();
+const BASE = lsGet("ss.ckey") || lsGet("wyl.ckey");
+const CKEY = BASE ? BASE + "-ss" : null;
+const $ = (id) => document.getElementById(id);
+let comments = [];
+const TARGETS = ".doc h1, .doc .sub, .doc h2, .doc p, .doc li, .doc .note, .doc .candy, .doc .scr .ref, .doc .scr .v, .doc .stitle, .doc .cast, .doc .scene, .doc .dir, .doc .ln";
+const mineAt = (i) => comments.filter(c => c.lesson === LESSON && c.i === i);
+async function load() {
+  try { const j = await (await fetch(API + CKEY)).json(); comments = (j.data && j.data.comments) || []; } catch {}
+  mark();
+}
+async function save(mutate) {
+  for (let n = 0; n < 2; n++) {
+    let cur = [];
+    try { const j = await (await fetch(API + CKEY)).json(); cur = (j.data && j.data.comments) || []; } catch {}
+    const next = mutate(cur.slice());
+    try {
+      const r = await fetch(API + CKEY, { method: "PUT", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ data: { comments: next }, updatedAt: Date.now() }) });
+      if ((await r.json()).ok) { comments = next; mark(); return true; }
+    } catch {}
+  }
+  return false;
+}
+function mark() {
+  document.querySelectorAll(".pen").forEach(b => b.classList.toggle("has", mineAt(Number(b.dataset.i)).length > 0));
+  const n = comments.filter(c => c.lesson === LESSON).length;
+  $("count").textContent = n ? n + " note" + (n > 1 ? "s" : "") + " on this lesson" : "";
+}
+let at = null;
+function renderOld() {
+  const mine = mineAt(at.i);
+  $("cmtOld").innerHTML = mine.map(c => `<div class="old"><span></span><button data-id="${c.id}">Delete</button></div>`).join("");
+  $("cmtOld").querySelectorAll(".old span").forEach((el, k) => el.textContent = mine[k].text);
+  $("cmtOld").querySelectorAll("button").forEach(b => b.onclick = async () => {
+    $("cmtStatus").textContent = "Deleting...";
+    await save(cur => cur.filter(c => c.id !== b.dataset.id));
+    $("cmtStatus").textContent = ""; renderOld();
+  });
+}
+function open(i, text) {
+  at = { i, quote: text.slice(0, 80) };
+  $("cmtQuote").textContent = "“" + text.slice(0, 90) + (text.length > 90 ? "...”" : "”");
+  $("cmtText").value = ""; $("cmtStatus").textContent = "";
+  renderOld(); $("cmt").classList.add("open"); $("cmtText").focus();
+}
+$("cmtClose").onclick = () => $("cmt").classList.remove("open");
+$("cmtSave").onclick = async () => {
+  const text = $("cmtText").value.trim();
+  if (!text) return;
+  $("cmtStatus").textContent = "Saving...";
+  const c = { id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), lesson: LESSON, i: at.i,
+              quote: at.quote, text, at: new Date().toISOString(), v: BUILD };
+  if (await save(cur => cur.concat([c]))) { $("cmtText").value = ""; $("cmtStatus").textContent = "Saved"; renderOld(); }
+  else $("cmtStatus").textContent = "Didn't save, try again";
+};
+if (CKEY) {
+  document.body.classList.add("editing");
+  document.querySelectorAll(TARGETS).forEach((el, i) => {
+    const text = el.textContent.trim();
+    const b = document.createElement("button");
+    b.className = "pen"; b.textContent = "✎"; b.dataset.i = i;
+    b.setAttribute("aria-label", "Note on this");
+    b.onclick = (e) => { e.stopPropagation(); open(i, text); };
+    el.appendChild(b);
+  });
+  load();
+}
+</script></body></html>
