@@ -60,6 +60,9 @@ body = [
              "And who did Adam blame?",
           "ZERO. Adam blamed the woman, AND God: \"the woman whom THOU gavest.\" "
           "Eve blamed the serpent. Follow up, no candy: *who do YOU blame?*"),
+    p("Adam was standing right there: *\"her husband with her.\"* He said nothing. "
+      "If Adam had handled it, God would not have had to step in. God is still looking for that man:"),
+    scripture("Ezekiel 22:30"),
 
     h("4. God made a way", 3),
     p("Sin had to be judged, but God did not leave them there. He promised a Saviour "
@@ -67,31 +70,32 @@ body = [
     scripture("Genesis 3:15"),
     p("And He covered them. Fig leaves were their idea. God's covering cost a life:"),
     scripture("Genesis 3:21"),
-    p("Repentance is not a one time thing. Paul said:"),
-    scripture("1 Corinthians 15:31"),
-    p("Every day we put our flesh (our selfish nature) back on the altar. "
-      "That is the *daily* in Luke 9:23."),
+    p("That animal covered them for a while, but it pointed to Jesus:"),
+    scripture("Hebrews 10:4"),
+    p("Repentance is not a one time thing. Back to our key verse, Jesus said *daily*:"),
+    scripture("Luke 9:23"),
+    p("Every day we put our flesh (our selfish nature) back on the altar."),
 
     h("5. Your story, or an illustration", 2),
-    p("Pick one: a crew guy who kept saying sorry for the same mistake, a time YOU had to "
-      "stop apologizing and fix it, or a time hiding made it worse. "
-      "**Or** *The Pilgrim's Progress* (John Bunyan): Christian flees the City of Destruction "
-      "and his burden rolls off at the cross."),
+    p("**You as a teenager:** you didn't want to repent, you were having a good time with your "
+      "sneaky stuff, but you knew what it was going to cost. You didn't want to, and you wanted to, "
+      "because you knew you needed to."),
 
     h("6. What would you do?", 3),
     candy(3, "You lost your temper with your little brother Monday, Tuesday and Wednesday, "
              "and said sorry every time. It is Thursday morning. What do you do?",
-          "EVERYONE who answers gets candy. Look for turning around: pray first, "
+          "EVERYONE who answers gets candy. Good answers: turning around, pray first, "
           "walk away, go to God before it happens again."),
     scripture("Acts 3:19"),
-    p("**The big church:** the altar is where the church goes to repent. When you see people "
-      "at the altar, now you know what is happening, and that it is for you too."),
+    p("**The big church:** the altar isn't only for when you've done something bad. It's where "
+      "you go to turn around, any time. So when you see grown ups at the altar, it doesn't mean "
+      "they're bad. They're doing what we just learned."),
 
     h("Prayer", 1),
-    p("*Jesus, we admit that we are sinners today. We recognize that we have missed the mark of "
-      "your righteousness time and time again. We're asking for You to forgive us. More "
-      "importantly, we commit to repenting of our sin. From this day forward we will work to turn "
-      "away from things that do not please You. Please give us the strength to live victoriously.*"),
+    p("You lead it, in your own words:"),
+    p("• Lord, help me first see where I'm wrong."),
+    p("• Help me be honest with myself: have I really repented?"),
+    p("• Do I even want to? If I don't, help me with that too."),
 ]
 
 out = os.path.join(HERE, "pdf")
