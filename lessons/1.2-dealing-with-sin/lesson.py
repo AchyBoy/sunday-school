@@ -44,15 +44,15 @@ body = [
 
     h("2. Act it out: The Birthday Candles", 4),
     script("The Birthday Candles", CANDLES_CAST, CANDLES),
-    candy(1, "He said sorry three times. Was he lying? Then what was missing?",
-          "Maybe he really was sorry. But he never CHANGED. Sorry is a feeling. "
+    candy(1, "How many times did he say he was sorry? Then why did he keep doing it?",
+          "Three times. He never CHANGED. Sorry is a feeling. "
           "Repentance is turning around."),
 
     h("3. What happened in the garden", 6),
     p("God made everything good, and He made man to walk with Him. He gave Adam one rule."),
     scripture("Genesis 2:17"),
-    p("The serpent did not tell a flat lie. He twisted what God said: *\"Did God really say?\"* "
-      "and *\"You won't really die.\"*"),
+    p("The serpent got her to doubt God first: *\"Yea, hath God said...?\"* "
+      "Then he called God a liar: *\"Ye shall not surely die.\"*"),
     scripture("Genesis 3:4-6"),
     p("Now watch what they do when God comes walking."),
     scripture("Genesis 3:8-13"),
