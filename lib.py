@@ -297,6 +297,23 @@ body { margin: 0; padding: 0 0 40vh; }
 """
 
 
+# Always the newest on reload (same as the coffee site). GitHub Pages caches a page up to
+# 10 minutes at its CDN, so after a deploy a reload can still show the old one. version.json
+# is fetched with a unique URL (never cached); if it names a newer build than this page, hop
+# once to ?v=<build>, a URL the cache has never seen. deploy.sh stamps SITE_BUILD in every
+# page, every .pdf?v= link and version.json together.
+FRESH = """<script>var SITE_BUILD='dev';
+(function(){
+  if(location.protocol==='file:'||SITE_BUILD==='dev') return;
+  fetch('/sunday-school/version.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.json()}).then(function(j){
+    if(!j||!j.build||j.build===SITE_BUILD) return;
+    var k='ss-fresh-'+j.build; try{ if(sessionStorage.getItem(k)) return; sessionStorage.setItem(k,'1'); }catch(e){}
+    var u=new URL(location.href); u.searchParams.set('v',j.build); location.replace(u.toString());
+  }).catch(function(){});
+})();
+</script>"""
+
+
 def web_page(lesson_id, title, body, parts=(), final=False):
     """lessons/<id>/index.html: the teacher copy on screen, same styles as the PDF, ✎ on every block."""
     import time
@@ -304,6 +321,7 @@ def web_page(lesson_id, title, body, parts=(), final=False):
     plinks = "".join(f'<a href="pdf/{urllib.parse.quote(f)}">{esc(f[7:-4])}</a>' for f in parts)
     return (f"<!doctype html><html><head><meta charset='utf-8'>"
             f"<meta name='viewport' content='width=device-width,initial-scale=1'><meta name='robots' content='noindex'>"
+            f"{FRESH}"
             f"<title>{esc(title)}</title><style>{CSS}{WEB_CSS}</style></head>"
             f"<body data-lesson='{esc(lesson_id)}' data-build='{int(time.time())}'>"
             f"<div class='top'><a href='../../'>&larr; Lessons</a>{tag}<span id='count'></span></div>"

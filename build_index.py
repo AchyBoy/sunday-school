@@ -1,6 +1,6 @@
 """Writes index.html: every lesson, newest first, teacher copy + part sheets."""
 import os, urllib.parse
-from lib import esc
+from lib import esc, FRESH
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 VERSION = "1.1"
@@ -30,6 +30,7 @@ for d in sorted(os.listdir(os.path.join(ROOT, "lessons")), reverse=True):
 open(os.path.join(ROOT, "index.html"), "w").write(f"""<!doctype html>
 <html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex"><meta name="x-ss-version" content="{VERSION}">
+{FRESH}
 <title>Sunday School Lessons</title><style>
 body{{font-family:-apple-system,Helvetica,sans-serif;margin:0;background:#f6f2ea;color:#111}}
 header{{background:#8a4b2a;color:#fff;padding:18px 16px}} h1{{margin:0;font-size:24px}}
