@@ -60,8 +60,9 @@ body = [
              "And who did Adam blame?",
           "ZERO. Adam blamed the woman, AND God: \"the woman whom THOU gavest.\" "
           "Eve blamed the serpent. Follow up, no candy: *who do YOU blame?*"),
-    p("Adam was standing right there: *\"her husband with her.\"* He said nothing. "
-      "If Adam had handled it, God would not have had to step in. God is still looking for that man:"),
+    p("God gave the rule to Adam. Adam was the leader, and he was right there: "
+      "*\"her husband with her.\"* If he had made up the hedge and stood in the gap, God "
+      "wouldn't have had to step in. That's what God wants:"),
     scripture("Ezekiel 22:30"),
 
     h("4. God made a way", 3),
@@ -77,9 +78,9 @@ body = [
     p("Every day we put our flesh (our selfish nature) back on the altar."),
 
     h("5. Your story, or an illustration", 2),
-    p("**You as a teenager:** you didn't want to repent, you were having a good time with your "
-      "sneaky stuff, but you knew what it was going to cost. You didn't want to, and you wanted to, "
-      "because you knew you needed to."),
+    p("**My story, as a teenager:** I didn't want to repent. I was having a good time with my "
+      "sneaky stuff, but I knew what it was going to cost. I didn't want to, and at the same time "
+      "I wanted to, because I knew I needed to."),
 
     h("6. What would you do?", 3),
     candy(3, "You lost your temper with your little brother Monday, Tuesday and Wednesday, "
@@ -92,7 +93,6 @@ body = [
       "they're bad. They're doing what we just learned."),
 
     h("Prayer", 1),
-    p("You lead it, in your own words:"),
     p("• Lord, help me first see where I'm wrong."),
     p("• Help me be honest with myself: have I really repented?"),
     p("• Do I even want to? If I don't, help me with that too."),

@@ -46,7 +46,14 @@ def md(s):
     return re.sub(r"\*(.+?)\*", r"<i>\1</i>", s)
 
 
+_READ = set()
+
+
 def scripture(ref, label=None):
+    # A verse printed a second time is marked so no student is picked to read it again.
+    if ref in _READ:
+        label = f"{label or ref} · already read, I'll say it"
+    _READ.add(ref)
     rows = "".join(
         f'<div class="v"><span class="n">{vs}</span><span>{esc(t)}</span></div>'
         for _, _, vs, t in verses(ref))
