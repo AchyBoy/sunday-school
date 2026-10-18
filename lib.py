@@ -78,6 +78,14 @@ def candy(n, question, answer):
             f'<div class="ca">{md(answer)}</div></div>')
 
 
+def funfact(title, *parts):
+    """The lesser known fact box, one per lesson. parts are paragraphs (md)."""
+    # a part that is a list is printed as lines under each other
+    body = "".join(f"<p>{'<br>'.join(md(y) for y in x)}</p>" if isinstance(x, list)
+                   else f"<p>{md(x)}</p>" for x in parts)
+    return f'<div class="fun"><div class="ft">⭐ Fun fact: {md(title)}</div>{body}</div>'
+
+
 def note(text):
     return f'<div class="note">{md(text)}</div>'
 
@@ -124,6 +132,10 @@ ul { margin: 4pt 0; padding-left: 18pt; } li { margin: 3pt 0; }
          margin: 10pt 0; break-inside: avoid; }
 .cq { font-weight: 700; font-size: 14.5pt; }
 .ca { color: #444; margin-top: 3pt; }
+.fun { border: 2.5px solid #e0a100; background: #fff8e1; border-radius: 8pt;
+       padding: 7pt 10pt; margin: 10pt 0; break-inside: avoid; }
+.fun .ft { font-weight: 800; font-size: 14.5pt; margin-bottom: 3pt; }
+.fun p { margin: 4pt 0; }
 .note { background: #eef3f8; padding: 6pt 10pt; border-radius: 6pt; margin: 8pt 0;
         break-inside: avoid; }
 .script { margin: 8pt 0; }
@@ -202,7 +214,7 @@ const BASE = lsGet("ss.ckey") || lsGet("wyl.ckey");
 const CKEY = BASE ? BASE + "-ss" : null;
 const $ = (id) => document.getElementById(id);
 let comments = [];
-const TARGETS = ".doc h1, .doc .sub, .doc h2, .doc p, .doc li, .doc .note, .doc .candy, .doc .scr .ref, .doc .scr .v, .doc .stitle, .doc .cast, .doc .scene, .doc .dir, .doc .ln";
+const TARGETS = ".doc h1, .doc .sub, .doc h2, .doc p, .doc li, .doc .note, .doc .candy, .doc .fun, .doc .scr .ref, .doc .scr .v, .doc .stitle, .doc .cast, .doc .scene, .doc .dir, .doc .ln";
 const mineAt = (i) => comments.filter(c => c.lesson === LESSON && c.i === i);
 async function load() {
   try { const j = await (await fetch(API + CKEY)).json(); comments = (j.data && j.data.comments) || []; } catch {}

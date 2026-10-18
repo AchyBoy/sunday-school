@@ -65,7 +65,7 @@ body = [
       "wouldn't have had to step in. That's what God wants:"),
     scripture("Ezekiel 22:30"),
 
-    h("4. God made a way", 3),
+    h("4. God made a way", 4),
     p("Sin had to be judged, but God did not leave them there. He promised a Saviour "
       "from the woman's seed:"),
     scripture("Genesis 3:15"),
@@ -73,6 +73,18 @@ body = [
     scripture("Genesis 3:21"),
     p("That animal covered them for a while, but it pointed to Jesus:"),
     scripture("Hebrews 10:4"),
+    funfact("Jesus walked it back",
+        "When Adam sinned, three things came in, in this order:",
+        ["**1. The tree:** *\"she took of the fruit thereof, and did eat, and gave also unto her husband "
+        "with her; and he did eat.\"* (Genesis 3:6)",
+        "**2. The thorns:** *\"Thorns also and thistles shall it bring forth to thee.\"* (Genesis 3:18)",
+        "**3. The sweat:** *\"In the sweat of thy face shalt thou eat bread.\"* (Genesis 3:19)"],
+        "Jesus met all three, backwards:",
+        ["**1. The sweat:** *\"his sweat was as it were great drops of blood.\"* (Luke 22:44)",
+        "**2. The thorns:** *\"they had platted a crown of thorns, they put it upon his head.\"* (Matthew 27:29)",
+        "**3. The tree:** *\"Who his own self bare our sins in his own body on the tree.\"* (1 Peter 2:24)"],
+        "Adam failed in a garden. Jesus won in a garden, and ended up right back at a tree. "
+        "The thorns were the curse, and they put the curse on His head."),
     p("Repentance is not a one time thing. Back to our key verse, Jesus said *daily*:"),
     scripture("Luke 9:23"),
     p("Every day we put our flesh (our selfish nature) back on the altar."),
