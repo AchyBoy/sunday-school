@@ -39,8 +39,8 @@ body = [
          "the 4 candle part sheets printed"),
 
     h("1. Testimony", 2),
-    p("1 student (or a teacher on the rotation). If they need a prompt: "
-      "*a time you said sorry, and then actually changed.*"),
+    p("One student, or one of us teachers, gives a testimony. If they get stuck, I'll ask: "
+      "*tell us about a time you said sorry, and then actually changed.*"),
 
     h("2. Act it out: The Birthday Candles", 4),
     script("The Birthday Candles", CANDLES_CAST, CANDLES),
@@ -77,7 +77,7 @@ body = [
     scripture("Luke 9:23"),
     p("Every day we put our flesh (our selfish nature) back on the altar."),
 
-    h("5. Your story, or an illustration", 2),
+    h("5. My story", 2),
     p("**My story, as a teenager:** I didn't want to repent. I was having a good time with my "
       "sneaky stuff, but I knew what it was going to cost. I didn't want to, and at the same time "
       "I wanted to, because I knew I needed to."),
