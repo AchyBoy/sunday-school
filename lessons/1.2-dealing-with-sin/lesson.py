@@ -47,6 +47,9 @@ body = [
     candy(1, "How many times did he say he was sorry? Then why did he keep doing it?",
           "Three times. He never CHANGED. Sorry is a feeling. "
           "Repentance is turning around."),
+    p("Is God like the birthday kid? We can say sorry to God and keep right on doing it. "
+      "Saying it is confessing. Stopping is forsaking. God wants both:"),
+    scripture("Proverbs 28:13"),
 
     h("3. What happened in the garden", 6),
     p("God made everything good, and He made man to walk with Him. He gave Adam one rule."),
