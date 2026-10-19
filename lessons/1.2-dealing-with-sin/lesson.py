@@ -77,17 +77,40 @@ body = [
     p("That animal covered them for a while, but it pointed to Jesus:"),
     scripture("Hebrews 10:4"),
     funfact("Jesus walked it back",
-        "When Adam sinned, three things came in, in this order:",
-        ["**1. The tree:** *\"she took of the fruit thereof, and did eat, and gave also unto her husband "
-        "with her; and he did eat.\"* (Genesis 3:6)",
-        "**2. The thorns:** *\"Thorns also and thistles shall it bring forth to thee.\"* (Genesis 3:18)",
-        "**3. The sweat:** *\"In the sweat of thy face shalt thou eat bread.\"* (Genesis 3:19)"],
-        "Jesus met all three, backwards:",
-        ["**1. The sweat:** *\"his sweat was as it were great drops of blood.\"* (Luke 22:44)",
-        "**2. The thorns:** *\"they had platted a crown of thorns, they put it upon his head.\"* (Matthew 27:29)",
-        "**3. The tree:** *\"Who his own self bare our sins in his own body on the tree.\"* (1 Peter 2:24)"],
-        "Adam failed in a garden. Jesus won in a garden, and ended up right back at a tree. "
-        "The thorns were the curse, and they put the curse on His head."),
+        "When Adam sinned, three things came in: the tree, the thorns, and the sweat. "
+        "Jesus met all three, backwards.",
+        "**1. The sweat:** Adam sweat because he did it his way. Jesus sweat to do it God's way, "
+        "so we can rest instead of sweating for it.",
+        "*For me, if they ask:* Adam: *\"In the sweat of thy face shalt thou eat bread, till thou "
+        "return unto the ground\"* (Genesis 3:19). Jesus in the garden: *\"nevertheless not my will, "
+        "but thine, be done... and his sweat was as it were great drops of blood falling down to the "
+        "ground\"* (Luke 22:42, 44). Adam lost in a garden doing his own will. Jesus won in a garden "
+        "by giving His up. For us: *\"Come unto me, all ye that labour and are heavy laden, and I will "
+        "give you rest\"* (Matthew 11:28). We still work, but we don't sweat to earn our way back to God.",
+        "**2. The thorns:** Adam traded his crown for thorns. Jesus wore the thorns to win the crown back.",
+        "*For me, if they ask:* Adam was made king over the earth: *\"have dominion over the fish of the "
+        "sea, and over the fowl of the air, and over every living thing\"* (Genesis 1:28). After he sinned "
+        "the ground turned on him: *\"Thorns also and thistles shall it bring forth to thee\"* (Genesis 3:18). "
+        "They mocked Jesus as a king with that curse: *\"they had platted a crown of thorns, they put it "
+        "upon his head... Hail, King of the Jews!\"* (Matthew 27:29). He was *\"made a curse for us\"* "
+        "(Galatians 3:13). Hebrews 2 ties it to Adam's crown itself: *\"But now we see not yet all things "
+        "put under him. But we see Jesus... for the suffering of death, crowned with glory and honour\"* "
+        "(Hebrews 2:8-9).",
+        "**3. The tree:** Adam took from a tree to make himself God. God gave Himself on a tree to bring "
+        "us back. Adam was naked, then God clothed him. Jesus was clothed, then they stripped Him naked.",
+        "*For me, if they ask:* The serpent: *\"ye shall be as gods\"* (Genesis 3:5). Jesus: *\"thought it "
+        "not robbery to be equal with God: But made himself of no reputation... and became obedient unto "
+        "death, even the death of the cross\"* (Philippians 2:6, 8). Adam was *\"naked... and were not "
+        "ashamed\"* (Genesis 2:25), sinned, hid in shame, and God *\"made coats of skins, and clothed "
+        "them\"* (Genesis 3:21). Jesus went the other way. The soldiers *\"took his garments, and made four "
+        "parts... and also his coat\"* and gambled for it (John 19:23-24). The Bible doesn't say the word "
+        "naked, but they took all of it, and the Romans usually crucified people naked to shame them. The "
+        "cloth in paintings is church art. He *\"endured the cross, despising the shame\"* (Hebrews 12:2), "
+        "so we could be clothed: *\"he hath clothed me with the garments of salvation, he hath covered me "
+        "with the robe of righteousness\"* (Isaiah 61:10). Adam was shut out from the tree of life "
+        "(Genesis 3:24). Through Jesus: *\"that they may have right to the tree of life\"* (Revelation 22:14).",
+        "*If they ask why we still sweat and thorns still grow:* He fixed it spiritually now. The ground "
+        "and our bodies are still waiting: *\"And there shall be no more curse\"* (Revelation 22:3)."),
     p("Repentance is not a one time thing. Back to our key verse, Jesus said *daily*:"),
     scripture("Luke 9:23"),
     p("Every day we put our flesh (our selfish nature) back on the altar."),
