@@ -99,8 +99,8 @@ body = [
     scripture("Ezekiel 22:30"),
     p("In Ezekiel's day, the leaders of Jerusalem had all gone bad. God looked for one man who "
       "would stand for what's right and pray for the land, so He wouldn't have to destroy it. "
-      "He found none. Adam had that same chance in the garden. He didn't stand. He joined in, "
-      "then blamed everybody but himself."),
+      "He found none. Adam had a chance to stand for what God said, too. But he didn't stand. "
+      "He joined in, then blamed everybody but himself."),
 
     h("4. God made a way", 4),
     p("Sin still had to be judged. But God did not leave them there. He promised a Saviour "
