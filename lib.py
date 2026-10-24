@@ -155,8 +155,11 @@ ul { margin: 4pt 0; padding-left: 18pt; } li { margin: 3pt 0; }
 .part .ln .say { font-size: 20pt; }
 .part .cue .say { font-size: 13pt; font-weight: normal; color: #666; font-style: italic; }
 .part .cue .who { color: #999; }
-.part .mine .who { color: #c2185b; font-size: 14pt; }
-.part .mine .say { font-weight: 800; }
+.part .mine .who { font-size: 13pt; }
+.part .mine .who span { background: #c2185b; color: #fff; padding: 2pt 6pt; border-radius: 4pt; }
+.part .mine .say { font-weight: 800; background: #fff3a0; padding: 2pt 6pt; border-radius: 4pt;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.part h1 span { background: #fff3a0; padding: 0 8pt; border-radius: 6pt; }
 .part .dir { margin-left: 0; font-size: 14pt; }
 """
 
@@ -190,12 +193,12 @@ def part_sheet(lesson_title, play_title, role, how, lines):
                 label = "Action" if pw == "*" else pw
                 out.append(f'<div class="ln cue"><span class="who">{esc(label)}</span>'
                            f'<span class="say">{md(cue)}</span></div>')
-            out.append(f'<div class="ln mine"><span class="who">YOU</span>'
+            out.append(f'<div class="ln mine"><span class="who"><span>{esc(role)}</span></span>'
                        f'<span class="say">{md(text)}</span></div><div style="height:10pt"></div>')
         prev = (who, text)
     body = (f'<div class="part"><div class="sub">{esc(lesson_title)} · {esc(play_title)}</div>'
-            f"<h1>{esc(role)}</h1><p>{md(how)}</p>"
-            f'<p style="color:#666;font-size:12pt">Gray is your cue. When you hear it, read the next line in big print.</p>'
+            f"<h1><span>{esc(role)}</span></h1><p>{md(how)}</p>"
+            f'<p style="color:#666;font-size:12pt">Gray is your cue. When you hear it, read your highlighted line.</p>'
             f"{''.join(out)}</div>")
     return page(role, body)
 
