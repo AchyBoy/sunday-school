@@ -54,6 +54,7 @@ body = [
     f"<h1>{TITLE}</h1>",
     '<div class="sub">Genesis 3 · Series 1: In the Beginning · About 20 minutes · '
     "Big idea: <b>Sorry is not enough. Repentance is turning around.</b></div>",
+    '<div class="sub">Written by Andrew Young</div>',
     scripture("Luke 9:23", "Key verse: Luke 9:23"),
     note("**Bring:** candy · the 4 part sheets printed"),
 
