@@ -157,9 +157,8 @@ ul { margin: 4pt 0; padding-left: 18pt; } li { margin: 3pt 0; }
 .part .cue .who { color: #999; }
 .part .mine .who { font-size: 13pt; }
 .part .mine .who span { background: #c2185b; color: #fff; padding: 2pt 6pt; border-radius: 4pt; }
-.part .mine .say { font-weight: 800; background: #fff3a0; padding: 2pt 6pt; border-radius: 4pt;
-  -webkit-box-decoration-break: clone; box-decoration-break: clone; }
-.part h1 span { background: #fff3a0; padding: 0 8pt; border-radius: 6pt; }
+.part .mine .say { font-weight: 800; border: 2pt solid #c2185b; padding: 3pt 8pt; border-radius: 5pt; }
+.part h1 span { color: #c2185b; }
 .part .dir { margin-left: 0; font-size: 14pt; }
 """
 
@@ -198,7 +197,7 @@ def part_sheet(lesson_title, play_title, role, how, lines):
         prev = (who, text)
     body = (f'<div class="part"><div class="sub">{esc(lesson_title)} · {esc(play_title)}</div>'
             f"<h1><span>{esc(role)}</span></h1><p>{md(how)}</p>"
-            f'<p style="color:#666;font-size:12pt">Gray is your cue. When you hear it, read your highlighted line.</p>'
+            f'<p style="color:#666;font-size:12pt">Gray is your cue. When you hear it, read your boxed line.</p>'
             f"{''.join(out)}</div>")
     return page(role, body)
 
