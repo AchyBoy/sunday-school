@@ -5,50 +5,72 @@ from lib import *
 
 TITLE = "Lesson 1.2: Dealing With Our Sin"
 
-CANDLES = [
-    ("#", "The party"),
-    ("*", "Birthday Kid stands at the table. Guests gather around. Parent \"lights\" the candles."),
-    ("Parent", "Okay everybody, here comes the cake! Ready? One, two, three..."),
-    ("Guests", "Happy birthday to you..."),
-    ("*", "Best Friend cuts in front and blows out the candles."),
-    ("Birthday Kid", "Hey! What did you do that for?"),
-    ("Best Friend", "Oh, I am so sorry. I shouldn't have done that."),
-    ("Birthday Kid", "It's okay. I forgive you."),
-    ("Parent", "Let's try again. One, two, three..."),
-    ("Guests", "Happy birthday to you, happy birthday to you..."),
-    ("*", "Best Friend cuts in again and blows out the candles."),
-    ("Birthday Kid", "Why did you do that?"),
-    ("Best Friend", "I don't know. I just couldn't help myself. I'm sorry."),
-    ("Birthday Kid", "Fine. I forgive you. But don't do it again."),
-    ("Parent", "Last time. One, two, three..."),
-    ("Guests", "Happy birthday to you, happy birthday dear friend, happy birthday..."),
-    ("*", "Best Friend bursts in and blows out ALL the candles."),
-    ("Birthday Kid", "STOP IT!"),
-    ("Best Friend", "I'm so sorry..."),
-    ("Parent", "Forget it. I'm just cutting the cake. Worst birthday ever."),
+SORRY = [
+    ("Jake", "Bro, why did you tell everybody I screamed when that little dog chased me?"),
+    ("Tyler", "Because you did scream."),
+    ("Jake", "It was not a scream!"),
+    ("Marcus", "I heard it from inside the house."),
+    ("Ben", "I thought somebody was getting kidnapped."),
+    ("Jake", "It was a very aggressive dog!"),
+    ("Tyler", "It was a Chihuahua."),
+    ("Jake", "THAT DOESN'T MATTER!"),
+    ("Tyler", "Okay, okay. I'm sorry. I shouldn't have told everybody."),
+    ("Jake", "Thank you. Just stop telling people."),
+    ("Tyler", "I got you, bro."),
+    ("Ben", "So what are y'all doing after church?"),
+    ("Tyler", "I don't know. Probably going to Jake's house. Hopefully his mom doesn't make him eat vegetables again."),
+    ("Jake", "Tyler!"),
+    ("Marcus", "Wait, what?"),
+    ("Tyler", "Oh, last week his mom made broccoli, and Jake sat there gagging like he was dying."),
+    ("Ben", "Over broccoli?!"),
+    ("Jake", "I TOLD YOU THAT IN PRIVATE!"),
+    ("Tyler", "My bad, bro. I'm sorry."),
+    ("Jake", "You just apologized for doing the exact same thing!"),
+    ("Tyler", "And I meant it!"),
+    ("Jake", "Then STOP DOING IT!"),
+    ("Tyler", "Okay! I won't do it again. Promise."),
+    ("Marcus", "So, Jake, you coming to play basketball Saturday?"),
+    ("Jake", "Yeah, probably."),
+    ("Tyler", "As long as he doesn't shoot any three-pointers."),
+    ("Jake", "Tyler. Don't."),
+    ("Ben", "Why not?"),
+    ("Tyler", "Because last time he shot one, it went over the backboard and hit somebody's grandma."),
+    ("Marcus", "NO WAY!"),
+    ("Jake", "IT DID NOT HIT HER! IT LANDED NEXT TO HER!"),
+    ("Tyler", "See? He's still sensitive about it."),
+    ("Jake", "BRO! YOU HAVE GOT TO BE KIDDING ME!"),
+    ("Tyler", "What?! I'm sorry!"),
+    ("Jake", "BRO! YOU KEEP SAYING YOU'RE SORRY!"),
+    ("Tyler", "Well, I AM sorry!"),
+    ("Jake", "THEN WHY DO YOU KEEP DOING IT?!"),
+    ("Ben", "I'm starting to think he doesn't know what sorry means."),
+    ("Marcus", "He knows how to say it. That's about it."),
+    ("Tyler", "Man, y'all are making a big deal out of nothing."),
+    ("Jake", "And THAT is why I don't believe you're sorry!"),
 ]
-CANDLES_CAST = [("Birthday Kid", ""), ("Best Friend", ""), ("Parent", ""),
-                ("Guests", "(everyone else sings)")]
+SORRY_CAST = [("Jake", ""), ("Tyler", ""), ("Marcus", ""), ("Ben", "")]
 
 body = [
     f"<h1>{TITLE}</h1>",
     '<div class="sub">Genesis 3 · Series 1: In the Beginning · About 20 minutes · '
     "Big idea: <b>Sorry is not enough. Repentance is turning around.</b></div>",
     scripture("Luke 9:23", "Key verse: Luke 9:23"),
-    note("**Bring:** candy · a cake or a paper plate \"cake\" with a few candles · "
-         "the 4 candle part sheets printed"),
+    note("**Bring:** candy · the 4 part sheets printed"),
 
     h("1. Testimony", 2),
     p("One student, or one of us teachers, gives a testimony. If they get stuck, I'll ask: "
       "*tell us about a time you said sorry, and then actually changed.*"),
 
-    h("2. Act it out: The Birthday Candles", 4),
-    script("The Birthday Candles", CANDLES_CAST, CANDLES),
-    candy(1, "How many times did he say he was sorry? Then why did he keep doing it?",
-          "Three times. He never CHANGED. Sorry is a feeling. "
-          "Repentance is turning around."),
-    p("Is God like the birthday kid? We can say sorry to God and keep right on doing it. "
-      "Saying it is confessing. Stopping is forsaking. God wants both:"),
+    h("2. Act it out: Bro, I Said Sorry!", 4),
+    p("Four boys: Jake, Tyler, Marcus, Ben. Hand out the parts and read straight through. "
+      "No props, no moving around, no practice needed."),
+    script("Bro, I Said Sorry!", SORRY_CAST, SORRY),
+    candy(1, "How many times did Tyler say he was sorry? Then why did he keep doing it?",
+          "Three times. He kept doing the same thing, and then defended it. Repentance means "
+          "really turning away from sin, not becoming perfect overnight. When we fail, we admit "
+          "it and turn back toward God."),
+    p("We can say sorry to God and keep right on doing it. Saying it is confessing. "
+      "Turning away is forsaking. God wants both:"),
     scripture("Proverbs 28:13"),
 
     h("3. What happened in the garden", 6),
@@ -63,18 +85,30 @@ body = [
              "And who did Adam blame?",
           "ZERO. Adam blamed the woman, AND God: \"the woman whom THOU gavest.\" "
           "Eve blamed the serpent. Follow up, no candy: *who do YOU blame?*"),
-    p("God gave the rule to Adam. Adam was the leader, and he was right there: "
-      "*\"her husband with her.\"* If he had made up the hedge and stood in the gap, God "
-      "wouldn't have had to step in. That's what God wants:"),
+    p("God told Adam not to eat the fruit. But when Eve repeated the command, she said they "
+      "weren't even supposed to *touch* it! God gave that command to Adam before Eve was "
+      "created, so it makes sense Adam taught her. Maybe he added that extra rule about "
+      "touching it. The Bible doesn't tell us who added it."),
+    p("But Adam knew what God said. Eve ate, and Adam was right there with her. He could have "
+      "stood for God's command. Instead, he ate too! How can you tell somebody else to obey God "
+      "when you won't obey Him yourself?"),
+    p("One day some of you will be husbands, fathers, and leaders. You can't lead somebody "
+      "somewhere you're not willing to go yourself. God calls men to stand for what's right, "
+      "not just know His Word, but live it. A godly leader doesn't have to be perfect. He needs "
+      "to admit when he's wrong, repent, and lead by example."),
     scripture("Ezekiel 22:30"),
+    p("That verse describes a different situation, but the principle fits: stand for what is "
+      "right. Adam didn't stand. He joined in, then blamed everybody but himself."),
 
     h("4. God made a way", 4),
     p("Sin had to be judged, but God did not leave them there. He promised a Saviour "
       "from the woman's seed:"),
     scripture("Genesis 3:15"),
-    p("And He covered them. Fig leaves were their idea. God's covering cost a life:"),
+    p("And He covered them. Fig leaves were their idea, but God made coats of skins for them. "
+      "That covering cost a life. They couldn't fix what they'd done themselves, so God had to "
+      "provide what they couldn't. And that points us to Jesus. No animal sacrifice could ever "
+      "take away sin. Only Jesus could do that."),
     scripture("Genesis 3:21"),
-    p("That animal covered them for a while, but it pointed to Jesus:"),
     scripture("Hebrews 10:4"),
     funfact("Jesus walked it back",
         "When Adam sinned, three things came in: the tree, the thorns, and the sweat. "
@@ -140,16 +174,16 @@ out = os.path.join(HERE, "pdf")
 os.makedirs(out, exist_ok=True)
 
 HOW = {
-    "Birthday Kid": "It's your birthday. You keep forgiving your friend, until the third time.",
-    "Best Friend": "You blow out the candles three times. Each time, mean it when you say sorry.",
-    "Parent": "You light the candles and count everyone in to sing.",
-    "Guests": "Everyone else. Sing Happy Birthday each time the Parent counts you in.",
+    "Jake": "Your friend Tyler keeps telling everybody your embarrassing stuff. You get louder every time.",
+    "Tyler": "You keep telling Jake's secrets, and you keep saying sorry. Say it like you mean it every time.",
+    "Marcus": "You're one of the friends. You can't believe what you're hearing.",
+    "Ben": "You're one of the friends. You ask the questions that get Tyler going.",
 }
 for f in os.listdir(out):
     os.remove(os.path.join(out, f))
 to_pdf(page(TITLE, "".join(body)), os.path.join(out, "1.2 Teacher - Dealing With Our Sin.pdf"))
 for role in HOW:
-    to_pdf(part_sheet(TITLE, "The Birthday Candles", role, HOW[role], CANDLES),
+    to_pdf(part_sheet(TITLE, "Bro, I Said Sorry!", role, HOW[role], SORRY),
            os.path.join(out, f"Part - {role}.pdf"))
 # FINAL = he has signed off; until then the site shows the marked-up web copy first.
 FINAL = False
