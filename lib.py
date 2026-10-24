@@ -94,6 +94,18 @@ def note(text):
 NARRATOR = "Narrator"
 
 
+# Each speaking part gets its own color, by order of first line: blue, green, orange, teal, ...
+ROLE_COLORS = ["#1565c0", "#2e7d32", "#e65100", "#00838f", "#5d4037", "#37474f", "#6a1b9a", "#b71c1c"]
+
+
+def role_color(role, lines):
+    order = []
+    for who, _ in lines:
+        if who not in ("*", "#", NARRATOR) and who not in order:
+            order.append(who)
+    return ROLE_COLORS[order.index(role) % len(ROLE_COLORS)] if role in order else "#c2185b"
+
+
 def script(title, cast, lines):
     castline = " · ".join(f"<b>{esc(r)}</b> {esc(w)}" for r, w in cast)
     body = []
@@ -104,7 +116,8 @@ def script(title, cast, lines):
             body.append(f'<div class="scene">{esc(text)}</div>')
         else:
             cls = "nar" if role == NARRATOR else "role"
-            body.append(f'<div class="ln {cls}"><span class="who">{esc(role)}</span>'
+            col = "" if role == NARRATOR else f' style="color:{role_color(role, lines)}"'
+            body.append(f'<div class="ln {cls}"><span class="who"{col}>{esc(role)}</span>'
                         f'<span class="say">{md(text)}</span></div>')
     return (f'<div class="script"><div class="stitle">{esc(title)}</div>'
             f'<div class="cast">{castline}</div>{"".join(body)}</div>')
@@ -180,7 +193,7 @@ def to_pdf(html_text, out_pdf):
 
 def part_sheet(lesson_title, play_title, role, how, lines):
     """One role's sheet: each of their lines with the line before it as the cue."""
-    out, prev = [], None
+    out, prev, c = [], None, role_color(role, lines)
     for who, text in lines:
         if who == "#":
             prev = None
@@ -192,11 +205,11 @@ def part_sheet(lesson_title, play_title, role, how, lines):
                 label = "Action" if pw == "*" else pw
                 out.append(f'<div class="ln cue"><span class="who">{esc(label)}</span>'
                            f'<span class="say">{md(cue)}</span></div>')
-            out.append(f'<div class="ln mine"><span class="who"><span>{esc(role)}</span></span>'
-                       f'<span class="say">{md(text)}</span></div><div style="height:10pt"></div>')
+            out.append(f'<div class="ln mine"><span class="who"><span style="background:{c}">{esc(role)}</span></span>'
+                       f'<span class="say" style="border-color:{c}">{md(text)}</span></div><div style="height:10pt"></div>')
         prev = (who, text)
     body = (f'<div class="part"><div class="sub">{esc(lesson_title)} · {esc(play_title)}</div>'
-            f"<h1><span>{esc(role)}</span></h1><p>{md(how)}</p>"
+            f"<h1><span style=\"color:{c}\">{esc(role)}</span></h1><p>{md(how)}</p>"
             f'<p style="color:#666;font-size:12pt">Gray is your cue. When you hear it, read your boxed line.</p>'
             f"{''.join(out)}</div>")
     return page(role, body)
