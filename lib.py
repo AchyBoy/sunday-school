@@ -191,7 +191,7 @@ def to_pdf(html_text, out_pdf):
     os.remove(tmp)
 
 
-def part_sheet(lesson_title, play_title, role, how, lines):
+def part_sheet(lesson_title, play_title, role, how, lines, author=None):
     """One role's sheet: each of their lines with the line before it as the cue."""
     out, prev, c = [], None, role_color(role, lines)
     for who, text in lines:
@@ -208,7 +208,8 @@ def part_sheet(lesson_title, play_title, role, how, lines):
             out.append(f'<div class="ln mine"><span class="who"><span style="background:{c}">{esc(role)}</span></span>'
                        f'<span class="say" style="border-color:{c}">{md(text)}</span></div><div style="height:10pt"></div>')
         prev = (who, text)
-    body = (f'<div class="part"><div class="sub">{esc(lesson_title)} · {esc(play_title)}</div>'
+    body = (f'<div class="part"><div class="sub">{esc(lesson_title)} · {esc(play_title)}'
+            f'{" · Written by " + esc(author) if author else ""}</div>'
             f"<h1><span style=\"color:{c}\">{esc(role)}</span></h1><p>{md(how)}</p>"
             f'<p style="color:#666;font-size:12pt">Gray is your cue. When you hear it, read your boxed line.</p>'
             f"{''.join(out)}</div>")

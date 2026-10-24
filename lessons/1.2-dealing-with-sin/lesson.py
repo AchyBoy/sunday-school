@@ -187,7 +187,7 @@ for f in os.listdir(out):
     os.remove(os.path.join(out, f))
 to_pdf(page(TITLE, "".join(body)), os.path.join(out, "1.2 Teacher - Dealing With Our Sin.pdf"))
 for role in HOW:
-    to_pdf(part_sheet(TITLE, "Bro, I Said Sorry!", role, HOW[role], SORRY),
+    to_pdf(part_sheet(TITLE, "Bro, I Said Sorry!", role, HOW[role], SORRY, author="Andrew Young"),
            os.path.join(out, f"Part - {role}.pdf"))
 # FINAL = he has signed off; until then the site shows the marked-up web copy first.
 FINAL = False
