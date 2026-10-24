@@ -66,7 +66,7 @@ body = [
       "No props, no moving around, no practice needed."),
     script("Bro, I Said Sorry!", SORRY_CAST, SORRY),
     candy(1, "How many times did Tyler say he was sorry? Then why did he keep doing it?",
-          "Three times. He kept doing the same thing, and then defended it. Repentance means "
+          "Four times. He kept doing the same thing, and then defended it. Repentance means "
           "really turning away from sin, not becoming perfect overnight. When we fail, we admit "
           "it and turn back toward God."),
     p("We can say sorry to God and keep right on doing it. Saying it is confessing. "
