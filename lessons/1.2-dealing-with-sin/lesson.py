@@ -67,11 +67,17 @@ body = [
       "No props, no moving around, no practice needed."),
     script("Bro, I Said Sorry!", SORRY_CAST, SORRY),
     candy(1, "How many times did Tyler say he was sorry? Then why did he keep doing it?",
-          "Four times. He kept doing the same thing, and then defended it. Repentance means "
-          "really turning away from sin, not becoming perfect overnight. When we fail, we admit "
-          "it and turn back toward God."),
-    p("We can say sorry to God and keep right on doing it. Saying it is confessing. "
-      "Turning away is forsaking. God wants both:"),
+          "Four times. He kept doing the same thing, and then defended it."),
+    p("Now, let me ask y'all something. Do you think Tyler was actually sorry?"),
+    p("Maybe he was the first time. But he sure wasn't trying very hard to change, was he?"),
+    p("And here's the thing. We laugh at Tyler, but how many times do we do the same thing?"),
+    p("We do something we know is wrong, ask God to forgive us, and then turn around and do it again."),
+    p("Now that doesn't mean if you mess up again, you weren't really sorry. We're all going to "
+      "make mistakes. But there's a difference between struggling with something you're trying "
+      "to overcome and continuing to do something you have no intention of giving up."),
+    p("And that's what repentance is about. It's not just saying you're sorry. It's turning away "
+      "from what you know is wrong."),
+    p("Saying it is confessing. Turning away is forsaking. God wants both."),
     scripture("Proverbs 28:13"),
 
     h("3. What happened in the garden", 6),
