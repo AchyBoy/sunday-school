@@ -192,26 +192,23 @@ def to_pdf(html_text, out_pdf):
 
 
 def part_sheet(lesson_title, play_title, role, how, lines, author=None):
-    """One role's sheet: each of their lines with the line before it as the cue."""
-    out, prev, c = [], None, role_color(role, lines)
+    """One role's sheet: the WHOLE skit, everyone else in gray, their own lines boxed.
+    Every kid gets every line so the ones with few lines can follow along to their cue."""
+    out, c = [], role_color(role, lines)
     for who, text in lines:
         if who == "#":
-            prev = None
-            continue
-        if who == role:
-            if prev:
-                pw, pt = prev
-                cue = pt if len(pt) < 160 else "..." + pt[-150:]
-                label = "Action" if pw == "*" else pw
-                out.append(f'<div class="ln cue"><span class="who">{esc(label)}</span>'
-                           f'<span class="say">{md(cue)}</span></div>')
+            out.append(f'<div class="scene">{md(text)}</div>')
+        elif who == role:
             out.append(f'<div class="ln mine"><span class="who"><span style="background:{c}">{esc(role)}</span></span>'
-                       f'<span class="say" style="border-color:{c}">{md(text)}</span></div><div style="height:10pt"></div>')
-        prev = (who, text)
+                       f'<span class="say" style="border-color:{c}">{md(text)}</span></div>')
+        else:
+            label = "Action" if who == "*" else who
+            out.append(f'<div class="ln cue"><span class="who">{esc(label)}</span>'
+                       f'<span class="say">{md(text)}</span></div>')
     body = (f'<div class="part"><div class="sub">{esc(lesson_title)} · {esc(play_title)}'
             f'{" · Written by " + esc(author) if author else ""}</div>'
             f"<h1><span style=\"color:{c}\">{esc(role)}</span></h1><p>{md(how)}</p>"
-            f'<p style="color:#666;font-size:12pt">Gray is your cue. When you hear it, read your boxed line.</p>'
+            f'<p style="color:#666;font-size:12pt">This is the whole skit. Follow along in gray. Your lines are in the boxes.</p>'
             f"{''.join(out)}</div>")
     return page(role, body)
 
