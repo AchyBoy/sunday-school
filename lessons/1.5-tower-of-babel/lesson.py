@@ -34,7 +34,8 @@ body = [
     '<div class="sub">Written by Andrew Young · Book: God resists the proud and arrogant</div>',
     note("**Bring:** 2 firm boards or tables (carpet) · 2 colors of plastic cups · 30-second timer · "
          "the printed cards · inspector's clipboard, pen, tape measure, fake nose and glasses · candy. "
-         "**Before class:** test the cups on the boards, brief the inspector, agree when she does the rejection."),
+         "**Saturday:** set up both boards and cups in the room and test the stacking. "
+         "**Before class:** brief the inspector, agree when she does the rejection."),
     note("**Who does what (3 ladies from the girls' class):** "
          "**Lady 1 = Building Inspector** (her own sheet). "
          "**Lady 2 = Boys' station helper**, also runs the 30-second buzzer. "
@@ -44,8 +45,7 @@ body = [
          "**ANSWER** = the point I'm fishing for, let THEM find it · **OPTIONAL** = if there's time"),
 
     h("Part 1. Noah, then a new group of builders", 5),
-    do("A few boys quietly set up the two building stations while we talk."),
-    ask("Alright, who remembers what we talked about last week? What did Noah build?"),
+    ask("Alright, who remembers what we talked about last lesson? What did Noah build?"),
     ask("Who told him to build it?"),
     ask("After the flood, did God give Noah and his family any instructions?"),
     scripture("Genesis 9:1"),
@@ -64,11 +64,11 @@ body = [
     funfact("They built up, God came down",
         "They built a tower *\"whose top may reach unto heaven.\"* And verse 5 says *\"the LORD came "
         "down to see\"* it. Their biggest thing ever, and God still had to come down to look at it.",
-        "*If they want more:* their words are *\"Go to, let us...\"* (verses 3 and 4). God answers "
-        "with their own words in verse 7: *\"Go to, let us go down.\"*"),
+        ),
     say("One language, one goal, everybody working together, and it was working. "
         "The problem wasn't the teamwork. It was what they were building."),
     ask("Have y'all ever been with a group of friends where everybody agreed to do something stupid?"),
+    opt("If they're stiff and nobody volunteers: *\"Okay, now somebody just 'make up something.'\"* (big air quotes)"),
     say("Just because everybody agrees doesn't mean everybody is right."),
     note("**Don't read verses 7-9 yet.** Save it for after the game."),
     say("These people had the materials, the manpower, and a plan. But how much of that depended on being "
@@ -111,6 +111,8 @@ body = [
     ask("And what had God already told Noah's family to do?"),
     say("Now watch what God does."),
     scripture("Genesis 11:7-9"),
+    opt("Did y'all catch verse 7? *\"Go to, let us go down.\"* They kept saying *\"Go to, let us\"* "
+        "(verses 3 and 4). God answers with their own words."),
     candy(2, "Did God knock their tower down?",
           "No! The Bible never says the tower fell. Follow up: *Did they run out of bricks? Then what "
           "happened?* Their language was confused, and *\"they left off to build the city.\"*"),
@@ -130,7 +132,7 @@ body = [
     candy(3, "Have you ever gotten so focused on doing something that you forgot to ask whether it was "
              "the right thing to do?",
           "Anyone who shares gets candy. Don't push if nobody does."),
-    say("Last week, Noah built because God told him to. This week, the people at Babel built to make a name "
+    say("Last lesson, Noah built because God told him to. This lesson, the people at Babel built to make a name "
         "for themselves. Both had plans. Both were builders. Both worked toward a goal. But only one was "
         "following God's instructions."),
     p(f"**{BIG}**"),
@@ -182,7 +184,7 @@ HELPER = [
       "the inspector does the funny part. You keep the game running."),
     note("**The secret:** only HEIGHT wins. The inspector's rejections don't count. Don't tell them."),
     "<h2>Before the game</h2>",
-    bullets("Your station: a firm board or table, your team's cup color, plus a few of the other color nearby.",
+    bullets("Andrew sets up both stations Saturday: a firm board, your team's cup color, a few of the other color nearby.",
             "Get your foreman cards (one set of 10 per team).",
             "When Andrew starts the game, line your team up in groups of 3: a foreman and two builders."),
     "<h2>During the game</h2>",
