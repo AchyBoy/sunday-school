@@ -3,153 +3,224 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "..", ".."))
 from lib import *
 
-# ROUND 1 = an IDEA MENU, every idea numbered so he can say "I like 3, tweak 7".
-# He doesn't have the book with him, so everything sits on Genesis 11:1-9 itself.
+# Built from his FINAL PLANNING NOTES (2026-11-18). Teacher copy in his voice, conversational.
 TITLE = "Lesson 1.5: The Tower of Babel"
-B = "📘 "  # from the book
+BIG = "Just because you're busy building something doesn't mean you're building what God told you to build."
 
 body = [
     f"<h1>{TITLE}</h1>",
-    '<div class="sub">Genesis 11:1-9 · Proverbs 16:18-19 · James 4:6-10 · Ages 14-17, about 30 kids · '
-    "Lesson about 15 min + activity about 10 min</div>",
-    '<div class="sub">Book: <b>God resists the proud and arrogant.</b> '
-    "Big idea: <b>I will worship only the one true God.</b></div>",
-    note("**Idea menu, round 2: the book is in.** 📘 = from the book. Every idea has a number. "
-         "Tap ✎ on any of them: keep it, cut it, or tell me what to change. Then I build the final lesson."),
+    '<div class="sub">Genesis 11:1-9 · Series 1: In the Beginning · Ages 14-17, about 30 kids · '
+    f"About 25-30 minutes · Big idea: <b>{esc(BIG)}</b></div>",
+    '<div class="sub">Written by Andrew Young</div>',
+    note("**Bring:** 2 firm boards or tables (carpet) · 2 colors of plastic cups · 30-second timer · "
+         "the printed cards (foreman cards, 2 rejection notices, APPROVED / REJECTED) · inspector's "
+         "clipboard, pen, tape measure, fake nose and glasses · candy. "
+         "**Before class:** test the cups on the boards, brief the inspector, agree when she does the "
+         "rejection. **During the opening:** a few boys quietly set up the two stations."),
 
-    h("The passage"),
-    scripture("Genesis 11:1-9"),
-
-    "<h2>Pick ONE activity (about 10 min)</h2>",
-    h("1. Silent tower build"),
-    p("Teams of 6 race to build the tallest tower out of cups or index cards and tape, 3 minutes. "
-      "At 90 seconds every kid gets a secret card: *only talk in questions · only Spanish · "
-      "no talking, only humming · every sentence starts with \"Banana\" · disagree with the last "
-      "person who spoke.* The towers fall apart. The lesson shows itself."),
-    p("**Needs:** about 150 cups or 5 packs of index cards + tape, 30 printed cards."),
-    h("2. Boys build a human pyramid, girls stack cups (your idea)"),
-    p("**2-minute clock. Whoever is HIGHEST when the timer goes off wins.** Not the highest you ever "
-      "got, the highest at the buzzer. Build early and you have to hold it the rest of the time. "
-      "Wait too long and you might not finish. The team decides when to go up."),
-    p("**Boys:** teams of 6 build a kneeling pyramid, 3 on the bottom, 2, then 1. If two teams are "
-      "both up at the buzzer, the tape measure decides (floor to the top kid's back). "
-      "**Girls:** teams build the tallest cup tower they can, any shape. Same rule: it only counts "
-      "if it's still standing at the buzzer. Hand out the secret language cards at the start, so "
-      "every team has to plan its timing while nobody understands each other."),
-    p("**Safety rules for the pyramid:** hands and knees only, nobody stands up, no more than 3 rows, "
-      "on carpet or mats, shoes off, and 2 spotters at each pyramid. If the bottom row says down, "
-      "everybody comes down. **Ask the pastor first:** some churches have rules about stunts like this."),
-    p("**Ties to the book:** the team that goes up too early, too proud, falls. "
-      "*\"Pride goeth before destruction, and an haughty spirit before a fall.\"*"),
-    p("**Needs:** about 150 plastic cups, a mat or carpet, a timer, a tape measure."),
-    h("3. Skit: Babel Construction Co. (your idea)"),
-    p("I'm the foreman on the job site: \"Bricks up, slime on, we're making a NAME for ourselves!\" "
-      "Halfway through, the workers draw cards and switch languages: auctioneer, Shakespeare, pirate, "
-      "Cajun French, robot, sign language. A city inspector walks in at the end and shuts the job down."),
-    p("**Needs:** 5-6 volunteers, the cards, about 5 min of script."),
-    h("4. Decoder race, one key split up (your idea)"),
-    p("Each team gets the key verse in a different code: symbols, Morse, emoji, pigpen, backwards. "
-      "But each team only has PART of the key, so they have to go find the other teams and trade. "
-      "No team finishes alone. Key verse could be James 4:6 to match the book."),
-    p("**Needs:** 5 printed code sheets + key pieces. I make them."),
-    h(B + "5. Alphabet ball toss, then backwards"),
-    p("Two lines, a small ball. Each person says the next letter (A, B, C...) and tosses it on. "
-      "Drop it, start over. Time each team. Then do it BACKWARDS (Z, Y, X...). "
-      "Book's point: overconfidence leaves us unprepared, humility prepares us. Only about 5 min, "
-      "so it could pair with something."),
-    p("**Needs:** 2 small balls, a timer."),
-    h(B + "6. True or false world records"),
-    p("I read 10 world records, 5 real and 5 made up, and they vote true or false. "
-      "Book's point: people will do strange things to make a name. I'll find 5 real ones if you pick it."),
-    h("7. Google Translate telephone"),
-    p("Genesis 11:4 run through 10 languages and back to English. They guess the verse. Quick opener."),
-    h("8. Back-to-back drawing"),
-    p("Pairs back to back. One describes a tower picture, the other draws it. No shape words."),
-
-    "<h2>The lesson (about 15 min). The book's point is PRIDE.</h2>",
-    h(B + "9. God resists the proud"),
-    p("The book's main point. The tower was pride: *\"let us make us a name.\"* God fights against pride. "
-      "If I let pride in, I'm asking God to fight me, and that's not a fight I win."),
-    scripture("James 4:6"),
-    scripture("Proverbs 16:18-19"),
-    h("10. Making a name for ourselves"),
-    p("Verse 4: *\"let us make us a name.\"* One chapter later God tells Abram *\"I will make thy name "
-      "great.\"* At Babel they built their own name. With Abram, God gave it. "
-      "Can be done with **name bricks:** every kid writes on a paper brick, no name, one thing people "
-      "our age do to make a name (followers, sports, grades, looks). Stack them, then knock them over."),
-    scripture("Genesis 12:2"),
-    h(B + "11. Pride hides in little ways"),
-    p("Most of us would never tell God \"I'm right and You're wrong.\" But we say it without words: "
-      "a day with no prayer, a week with no Bible, a big decision without asking God. "
-      "And false confidence: skipping the study guide, the parking spot that was too small."),
-    h(B + "12. Humble yourselves, and He lifts you up"),
-    p("They tried to build their way UP to heaven. James says get low, and God lifts you up. "
-      "Humility is not putting yourself down. It's lifting Jesus higher, getting off the throne and "
-      "putting Him on it. Book's commitment: *I will worship only the one true God.*"),
-    scripture("James 4:7-10"),
-    h(B + "13. The quicksand story"),
-    p("A man is stuck in quicksand. Confucius says he should stay out of places like this. Buddha says let "
-      "it be a lesson to the world. Mohammad says it is the will of God. Jesus says: \"Take my hand, I will "
-      "save you.\" Only Jesus actually helps. *The book calls it a legend, it's a made-up story, so I'd say that too.*"),
-    h("14. Babel turned around: Pentecost"),
-    p("Babel: one language split, people scattered. Pentecost: many languages heard one message, people "
-      "gathered. Revelation: every language together before the throne."),
-    scripture("Acts 2:6"),
-    scripture("Revelation 7:9"),
-    h("15. God came down to see it"),
-    p("Verse 5: they built a tower to reach heaven, and God still had to *come down* to see it."),
-    h(B + "16. Together is not always good"),
-    p("They were united and working hard, but against what God said: spread out and fill the earth. "
-      "A group all on the same page can still be on the wrong page. The book says this too."),
+    h("1. Opening: Noah", 5),
+    p("Who remembers what we talked about last week?"),
+    p("What did Noah build? ...Right, the ark."),
+    p("So did Noah just wake up one morning and go, \"You know what? I want a giant boat\"?"),
+    p("No. God told him to build it. And when they came off the ark, God gave them a job:"),
     scripture("Genesis 9:1"),
-    h(B + "17. Opener: famous for no reason"),
-    p("The book opens with Vine and Thomas Sanders. **Honest note:** Vine shut down in 2017, when these "
-      "kids were 5 to 8, so most won't know it. Same question works with today's apps: "
-      "*can you think of someone who is popular for no reason at all?*"),
-
-    "<h2>Fun facts (pick 1 or 2)</h2>",
-    h("18. Fun fact: bricks with a name stamped on them"),
-    funfact("They really did make a name on the bricks",
+    p("Replenish the earth. Spread out and fill it up."),
+    p("Now, a few generations later, we've got another group of people who decide to build something "
+      "massive. But there's one pretty big difference. Noah built because God told him to. "
+      "These people wanted to make a name for themselves."),
+    scripture("Genesis 11:1-4"),
+    p("Did y'all catch that? *\"Let us make us a name.\"* And *\"lest we be scattered abroad.\"*"),
+    candy(1, "What did God tell Noah's family to do? And what are these people trying to avoid doing?",
+          "Fill the earth (Genesis 9:1). They're trying NOT to be scattered. Let them make the "
+          "connection themselves."),
+    funfact("They really did stamp a name on the bricks",
         "In the Bible, Babel and Babylon are the same word. Centuries later, King Nebuchadnezzar "
         "(the one from Daniel) rebuilt Babylon and stamped HIS NAME into the bricks. Archaeologists "
-        "have dug up thousands of them, and museums have them today.",
-        "Same city, same idea as verse 4, *\"let us make us a name.\"* And Nebuchadnezzar said it "
-        "out loud in Daniel 4:30: *\"Is not this great Babylon, that I have built... by the might of "
-        "my power, and for the honour of my majesty?\"* The next verse, God humbled him.",
-        "*Honest note:* the stamped bricks are real, but they're from Nebuchadnezzar's time, long after "
-        "the tower. Linking them to verse 4 is a connection, not something a verse says."),
-    h("19. Fun fact: slime = tar, same stuff as Moses' basket"),
-    funfact("Slime for morter",
-        "Verse 3 *\"slime\"* is tar (bitumen) that bubbles up out of the ground in that part of the "
-        "world. They had no stone, so they baked bricks and glued them with tar.",
-        "The same word shows up when Moses' mother made his basket: *\"daubed it with slime and with "
-        "pitch\"* (Exodus 2:3). Same stuff: at Babel it built a tower for man's name, on the Nile it "
-        "saved the baby God would use."),
-    "<h2>Extras (add any)</h2>",
-    h("20. Kids who speak another language"),
-    p("If anybody speaks Spanish, Vietnamese, Cajun French (or has a grandparent who does), have them "
-      "teach the class one phrase, like \"God loves you.\""),
-    h("21. Candy questions (2 or 3)"),
-    candy("a", "Why did they want to build the tower? Two reasons, both in verse 4.",
-          "To make a name, and so they wouldn't be scattered."),
-    candy("b", "Finish it: Pride goeth before destruction, and an haughty spirit before a...",
-          "Fall (Proverbs 16:18). Good right after the towers fall."),
-    candy("c", "What would you do? Your friend group is all in on something you know is wrong. "
-               "Everybody agrees. What do you do?",
+        "have dug up thousands of them, and museums have them today. Same city, same idea: "
+        "*\"let us make us a name.\"*",
+        "*For me:* the bricks are from long after the tower, so this is a connection, not something "
+        "Genesis says. Nebuchadnezzar said it himself in Daniel 4:30: *\"Is not this great Babylon, "
+        "that I have built... for the honour of my majesty?\"*"),
+    p("**Life lesson:** having a good plan doesn't automatically mean it's God's plan."),
+
+    h("2. Before the game: they were united", 6),
+    scripture("Genesis 11:5-6"),
+    p("Look what God Himself says about them: *\"the people is one, and they have all one language.\"* "
+      "Everybody was working together. Everybody had the same goal. And it worked, they were good at it. "
+      "But what they were working toward was the opposite of what God said to do."),
+    p("Have y'all ever been with a group of friends where everybody agreed to do something stupid?"),
+    p("**Life lesson:** just because everybody agrees doesn't mean everybody is right."),
+    p("They had one language, so they could coordinate everything. Bricks, slime, who's carrying what."),
+    note("**Don't read verses 7-9 yet.**"),
+    p("So these people had the materials, the manpower, and a plan. But how much of their success "
+      "depended on being able to understand each other?"),
+    p("Well... we're about to find out."),
+
+    h("3. Babel Construction Company", 10),
+    bullets("Boys vs. girls, one station each, about 15 per team.",
+            "One **foreman** and two **builders** per team at a time. Everyone else waits in line.",
+            "Every **30 seconds** the buzzer goes and all three rotate out. Five rotations = everyone "
+            "gets a turn. Run more if there's time.",
+            "**First 30 seconds:** normal talking. After the first buzzer, every new foreman gets a "
+            "secret card. Only the foreman reads it.",
+            "The inspector roams the whole time. She never stops the game."),
+    p("**The announcement (I read it out loud):**"),
+    p("Welcome to Babel Construction Company! Each team will be constructing the tallest tower possible "
+      "using the materials provided."),
+    p("**THE WINNER WILL BE DETERMINED BY THE FINAL HEIGHT OF THEIR STANDING TOWER.**"),
+    p("Now, a few things you need to know. You'll have a foreman and two builders working at a time. "
+      "Every 30 seconds, the buzzer will sound, and all three will be replaced. Each new foreman will "
+      "receive a special communication instruction that must be followed at all times."),
+    p("Our official building inspector will be conducting inspections throughout construction. She has "
+      "the authority to issue rejection notices, require modifications, and demand immediate corrections "
+      "to building-code violations. All rejection notices must be communicated by the foreman to the "
+      "builders. Builders may not read rejection notices. At the conclusion, the inspector will conduct a "
+      "final inspection and issue an official approval or rejection."),
+    p("Any questions? ...Good. Because I probably wasn't going to answer them anyway."),
+    p("**LET THE CONSTRUCTION BEGIN!**"),
+    note("**Only height wins.** The inspector's approvals, rejections and building codes do NOT count. "
+         "Don't remind them until the end."),
+    p("**About halfway:** the inspector fails BOTH towers and hands each foreman a rejection notice: "
+      "five cups of the other team's color somewhere in rows 3-5. The foreman has to explain it under "
+      "their card's rule, and passes the notice to the next foreman. The timer never stops."),
+    p("**When time is up:** everybody stops. The inspector does her final inspection, APPROVED or "
+      "REJECTED (just for show). Then I ask:"),
+    p("Okay. Which team actually won?"),
+    p("She measures. Tallest standing tower wins. (If the inspector's favorite LOST, she gets to be "
+      "outraged: *\"EXCUSE ME?!\"* · *\"The rules said tallest tower wins.\"* · "
+      "*\"Well, that's a terrible system.\"*)"),
+
+    h("4. Who authorized this?", 2),
+    p("Did I tell y'all how to win? ...What did I say? ...Build the tallest tower."),
+    p("Then why were y'all so worried about making the inspector happy?"),
+    p("You got so busy following all these other instructions that you lost sight of the original one."),
+    p("**Inspector:** *\"These towers are impressive, but I have one question... "
+      "WHO AUTHORIZED THIS CONSTRUCTION?\"*"),
+    p("That's actually a very good question. Because when we left off in Genesis 11, the people were "
+      "building something impressive. But who told them to build it?"),
+
+    h("5. Finish the story", 6),
+    scripture("Genesis 11:7-9"),
+    candy(2, "Did God knock their tower down?",
+          "No! The Bible never says the tower fell. They didn't run out of bricks, and they didn't forget "
+          "how to build. What changed? Their language. And *\"they left off to build the city.\"*"),
+    p("They built that tower so they wouldn't be scattered. And what happened? They got scattered."),
+    bullets("**Genesis 9:1**, God's command: fill the earth.",
+            "**Genesis 11:4**, man's plan: stay together and make a name for ourselves.",
+            "**Genesis 11:8**, God's answer: they were scattered."),
+    p("**Life lesson:** you can be busy, talented, successful, and surrounded by people who agree with "
+      "you, and still be heading in the wrong direction."),
+    p("Have you ever been so focused on doing something that you forgot why you were doing it?"),
+    p("Do you ever stop and ask God whether what you're working toward is actually what He wants?"),
+    scripture("Proverbs 3:5-6"),
+    note("**For me:** Genesis doesn't say they forgot God's command or that they didn't pray. Those are "
+         "questions for US, not facts about them."),
+
+    h("6. If there's time: Pentecost", 3),
+    p("At Babel, they all had one language, and they used it to make their own name great. "
+      "At Pentecost, people from every nation heard, each in his own language..."),
+    scripture("Acts 2:4-11"),
+    p("...*\"the wonderful works of God.\"* The difference isn't one language or many languages. "
+      "It's whose name is being lifted up. (And look at verse 6: the crowd was *\"confounded,\"* the same "
+      "word as Babel. Only this time God was the one getting the attention.)"),
+
+    h("7. Closing", 3),
+    p("Last week, we learned about Noah. Noah built because God told him to."),
+    p("This week, we learned about people who built because they wanted to make a name for themselves."),
+    p("Both had plans. Both were builders. Both were working toward something. "
+      "But only one was following God's instructions."),
+    p("There's nothing wrong with having ambition, working hard, or wanting to accomplish something. "
+      "But we need to make sure that what we're building is what God wants us to build."),
+    candy(3, "What would you do? Your friends all agree on a plan for the weekend. It's fun, nobody "
+             "thinks it's bad, but nobody has asked God either. What do you do?",
           "EVERYONE who answers gets candy."),
-    h("22. Closing: my story"),
-    p("A time I tried to make a name for myself, or a time I went along with the group. "
-      "Tell me which, and I'll help word it."),
+    p(f"**{BIG}**"),
 ]
+
+# ---- the inspector's sheet (a teacher plays her) ----
+INSPECTOR = [
+    "<h1>Building Inspector</h1>",
+    f'<div class="sub">{TITLE} · Babel Construction Company</div>',
+    p("**Who you are:** an overly serious government inspector. Your job is VERY important "
+      "and you have no idea how ridiculous you are."),
+    p("**Props:** clipboard, pen for extremely serious notes, tape measure, fake nose and glasses, "
+      "2 REJECTED notices, APPROVED and REJECTED cards."),
+    note("**The secret:** only HEIGHT wins. Your approvals and rejections don't count at all. "
+         "Don't tell them. Never stop the game, keep walking around while they build."),
+    "<h2>While they build</h2>",
+    bullets("\"Is that a load-bearing cup?\"",
+            "\"Where are your permits?\"",
+            "\"That doorway is not ADA compliant.\"",
+            "\"I'm seeing a concerning amount of confidence for a structure with no foundation.\"",
+            "\"Who approved this?\"",
+            "\"I'm not saying it's going to fall. I'm saying I wouldn't stand next to it.\"",
+            "\"I've seen better construction from a toddler with mashed potatoes.\""),
+    p("**Tape measure bit:** measure something holding the tape wrong, study it very seriously, then: "
+      "*\"According to my calculations, this doorway is approximately... seventeen.\"* "
+      "Write it on the clipboard and walk away."),
+    "<h2>About halfway: BOTH towers fail</h2>",
+    p("Adjust your glasses. Concerned noises. *\"Mmmmm. No. No, no, no. Oh dear. This is not good.\"*"),
+    p("**\"BOTH BUILDINGS HAVE FAILED INSPECTION!\"**"),
+    p("Hand each team's CURRENT foreman a rejection notice. Only the foreman reads it. If they "
+      "haven't fixed it when you come back: *\"Still rejected!\"*"),
+    "<h2>Final inspection</h2>",
+    p("Look at both towers: the other-color cups, how it looks, whatever concern you invent. "
+      "Give each one APPROVED or REJECTED. Then Andrew asks which team actually won, and you measure."),
+    p("**If your favorite lost:** *\"EXCUSE ME?!\"* ... Andrew: *\"The rules said tallest tower wins.\"* "
+      "... You: *\"Well, that's a terrible system.\"*"),
+    p("**Your last line, after Andrew asks why they worried about you:** "
+      "*\"These towers are impressive, but I have one question... WHO AUTHORIZED THIS CONSTRUCTION?\"*"),
+]
+
+# ---- cards to print and cut ----
+FOREMAN = ["Speak only in questions", "Sing every instruction", "Say your words in reverse order",
+           "Only three words at a time", "Whisper every instruction", "Talk like a robot",
+           "Narrate like a sports announcer", "Say everything dramatically",
+           "Only say yes, no, or maybe", "Put a Bible verse in every instruction"]
+CARD_CSS = """
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+.card { border: 1.5px dashed #888; height: 1.8in; padding: 12pt; box-sizing: border-box;
+        display: flex; flex-direction: column; justify-content: center; text-align: center; }
+.card .k { font-size: 10pt; letter-spacing: 1pt; color: #8a4b2a; font-weight: 800; }
+.card .t { font-size: 21pt; font-weight: 800; margin-top: 6pt; }
+.card .s { font-size: 10pt; color: #666; margin-top: 6pt; }
+.rej { border: 4px solid #b71c1c; padding: 18pt; margin: 0 0 22pt; text-align: center; break-inside: avoid; }
+.rej .d { font-weight: 800; letter-spacing: 2pt; }
+.rej .big { font-size: 34pt; font-weight: 900; color: #b71c1c; margin: 6pt 0; }
+.rej .v { font-weight: 700; }
+.rej .body { font-size: 17pt; margin: 12pt 0; }
+.stamp { height: 3.8in; display: flex; align-items: center; justify-content: center;
+         font-size: 72pt; font-weight: 900; border: 8px solid; margin-bottom: 0.3in; }
+"""
+cards = "".join(
+    f'<div class="card"><div class="k">FOREMAN ONLY · DON\'T SHOW YOUR BUILDERS</div>'
+    f'<div class="t">{esc(t)}</div><div class="s">Babel Construction Co.</div></div>'
+    for t in FOREMAN)
+REJ = ('<div class="rej"><div class="d">BABEL BUILDING DEPARTMENT</div><div class="big">INSPECTION FAILED</div>'
+       '<div class="v">VIOLATION #11-4B</div><div class="body">This structure must contain a minimum of '
+       "<b>FIVE cups of the opposing team's color</b>, located somewhere in <b>rows 3-5</b>.</div>"
+       '<div class="body"><b>Correct immediately.</b><br>Construction may continue during repairs.</div>'
+       '<div class="s">Foreman only. Pass this to the next foreman.</div></div>')
+PRINT = (f"<style>{CARD_CSS}</style>"
+         '<div class="sub">Cut on the dashed lines. 2 of each foreman card (one set per team).</div>'
+         f'<div class="grid">{cards}</div><div class="pb"></div><div class="grid">{cards}</div>'
+         f'<div class="pb"></div>{REJ}{REJ}'
+         '<div class="pb"></div><div class="stamp" style="color:#2e7d32;border-color:#2e7d32">APPROVED</div>'
+         '<div class="stamp" style="color:#2e7d32;border-color:#2e7d32">APPROVED</div>'
+         '<div class="pb"></div><div class="stamp" style="color:#b71c1c;border-color:#b71c1c">REJECTED</div>'
+         '<div class="stamp" style="color:#b71c1c;border-color:#b71c1c">REJECTED</div>')
 
 out = os.path.join(HERE, "pdf")
 os.makedirs(out, exist_ok=True)
 for f in os.listdir(out):
     os.remove(os.path.join(out, f))
 to_pdf(page(TITLE, "".join(body)), os.path.join(out, "1.5 Teacher - The Tower of Babel.pdf"))
+to_pdf(page("Inspector", "".join(INSPECTOR)), os.path.join(out, "Part - Inspector.pdf"))
+to_pdf(page("Cards to print", PRINT), os.path.join(out, "Part - Cards to print.pdf"))
 FINAL = False
 open(os.path.join(HERE, "index.html"), "w").write(web_page(
-    os.path.basename(HERE), TITLE, "".join(body), [], final=FINAL))
+    os.path.basename(HERE), TITLE, "".join(body),
+    ["Part - Inspector.pdf", "Part - Cards to print.pdf"], final=FINAL))
 mark = os.path.join(HERE, "FINAL")
 if FINAL:
     open(mark, "w").close()
