@@ -45,6 +45,11 @@ body = [
 
     h("2. Before the game: they were united", 6),
     scripture("Genesis 11:5-6"),
+    funfact("They built up, God came down",
+        "They built a tower *\"whose top may reach unto heaven.\"* And verse 5 says *\"the LORD came "
+        "down to see\"* it. Their biggest thing ever, and God still had to come down to look at it.",
+        "*If they want more:* look at their words, *\"Go to, let us...\"* (verses 3 and 4). God answers "
+        "with their own words in verse 7: *\"Go to, let us go down.\"*"),
     p("Look what God Himself says about them: *\"the people is one, and they have all one language.\"* "
       "Everybody was working together. Everybody had the same goal. And it worked, they were good at it. "
       "But what they were working toward was the opposite of what God said to do."),
