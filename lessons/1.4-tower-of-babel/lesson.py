@@ -25,14 +25,18 @@ body = [
       "person who spoke.* The towers fall apart. The lesson shows itself."),
     p("**Needs:** about 150 cups or 5 packs of index cards + tape, 30 printed cards."),
     h("1b. Boys build a human pyramid, girls stack cups (your idea)"),
-    p("Same race, same clock. **Boys:** teams of 6 build a KNEELING pyramid, 3 on the bottom, 2, "
-      "then 1 on top, and hold it for 10 seconds. **Girls:** teams race to stack a 36-cup pyramid "
-      "and take it back down. Hand out the secret language cards at the start, so every team has "
-      "to build it while they can't understand each other."),
+    p("**2-minute clock. Whoever is HIGHEST when the timer goes off wins.** Not the highest you ever "
+      "got, the highest at the buzzer. Build early and you have to hold it the rest of the time. "
+      "Wait too long and you might not finish. The team decides when to go up."),
+    p("**Boys:** teams of 6 build a kneeling pyramid, 3 on the bottom, 2, then 1. If two teams are "
+      "both up at the buzzer, the tape measure decides (floor to the top kid's back). "
+      "**Girls:** teams build the tallest cup tower they can, any shape. Same rule: it only counts "
+      "if it's still standing at the buzzer. Hand out the secret language cards at the start, so "
+      "every team has to plan its timing while nobody understands each other."),
     p("**Safety rules for the pyramid:** hands and knees only, nobody stands up, no more than 3 rows, "
       "on carpet or mats, shoes off, and 2 spotters at each pyramid. If the bottom row says down, "
       "everybody comes down. **Ask the pastor first:** some churches have rules about stunts like this."),
-    p("**Needs:** about 150 plastic cups, a mat or carpet, a timer."),
+    p("**Needs:** about 150 plastic cups, a mat or carpet, a timer, a tape measure."),
     h("2. Skit: Babel Construction Co. (your idea)"),
     p("I'm the foreman on the job site: \"Bricks up, slime on, we're making a NAME for ourselves!\" "
       "Halfway through, the workers draw cards and switch languages: auctioneer, Shakespeare, pirate, "
