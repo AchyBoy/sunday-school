@@ -35,6 +35,11 @@ body = [
     note("**Bring:** 2 firm boards or tables (carpet) · 2 colors of plastic cups · 30-second timer · "
          "the printed cards · inspector's clipboard, pen, tape measure, fake nose and glasses · candy. "
          "**Before class:** test the cups on the boards, brief the inspector, agree when she does the rejection."),
+    note("**Who does what (3 ladies from the girls' class):** "
+         "**Lady 1 = Building Inspector** (her own sheet). "
+         "**Lady 2 = Boys' station helper**, also runs the 30-second buzzer. "
+         "**Lady 3 = Girls' station helper.** Helpers line up their team in threes, hand each new foreman "
+         "a card, and keep builders from reading cards. I run the lesson and the announcement."),
     note("**SAY** = how I might put it, not word for word · **DO** = action · **ASK** = question for them · "
          "**ANSWER** = the point I'm fishing for, let THEM find it · **OPTIONAL** = if there's time"),
 
@@ -168,6 +173,31 @@ INSPECTOR = [
       "WHO AUTHORIZED THIS CONSTRUCTION?\"*"),
 ]
 
+
+# ---- station helper sheet (2 of the ladies, one per team) ----
+HELPER = [
+    "<h1>Station Helper</h1>",
+    f'<div class="sub">{TITLE} · Babel Construction Company · one helper at the boys\' station, one at the girls\'</div>',
+    p("**Your job:** keep your team's line moving and hand out the secret cards. Andrew runs the lesson; "
+      "the inspector does the funny part. You keep the game running."),
+    note("**The secret:** only HEIGHT wins. The inspector's rejections don't count. Don't tell them."),
+    "<h2>Before the game</h2>",
+    bullets("Your station: a firm board or table, your team's cup color, plus a few of the other color nearby.",
+            "Get your foreman cards (one set of 10 per team).",
+            "When Andrew starts the game, line your team up in groups of 3: a foreman and two builders."),
+    "<h2>During the game</h2>",
+    bullets("**Boys' station helper runs the buzzer:** every 30 seconds, call it out loud for BOTH teams.",
+            "**First 30 seconds:** no cards, normal talking.",
+            "**Every buzzer after that:** the 3 at the tower step out, the next 3 step in. Hand the new foreman "
+            "a card, take the old card back. Only the foreman reads it.",
+            "Builders don't read the cards or the rejection notice. Cover it if they peek.",
+            "**When the inspector hands out the rejection notice:** make sure it passes foreman to foreman at "
+            "each buzzer.",
+            "Five rotations gets everyone one turn. Go around again if Andrew says keep going."),
+    "<h2>When time is up</h2>",
+    p("Everybody hands off, nobody touches the tower. The inspector measures. Andrew takes it from there."),
+]
+
 # ---- cards to print and cut ----
 FOREMAN = ["Speak only in questions", "Sing every instruction", "Say your words in reverse order",
            "Only three words at a time", "Whisper every instruction", "Talk like a robot",
@@ -212,11 +242,12 @@ for f in os.listdir(out):
     os.remove(os.path.join(out, f))
 to_pdf(page(TITLE, "".join(body)), os.path.join(out, "1.5 Teacher - The Tower of Babel.pdf"))
 to_pdf(page("Inspector", "".join(INSPECTOR)), os.path.join(out, "Part - Inspector.pdf"))
+to_pdf(page("Station Helper", "".join(HELPER)), os.path.join(out, "Part - Station helper.pdf"))
 to_pdf(page("Cards to print", PRINT), os.path.join(out, "Part - Cards to print.pdf"))
 FINAL = False
 open(os.path.join(HERE, "index.html"), "w").write(web_page(
     os.path.basename(HERE), TITLE, "".join(body),
-    ["Part - Inspector.pdf", "Part - Cards to print.pdf"], final=FINAL))
+    ["Part - Inspector.pdf", "Part - Station helper.pdf", "Part - Cards to print.pdf"], final=FINAL))
 mark = os.path.join(HERE, "FINAL")
 if FINAL:
     open(mark, "w").close()
