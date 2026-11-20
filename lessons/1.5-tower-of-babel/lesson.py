@@ -55,7 +55,8 @@ body = [
     exp("*\"Let us make us a name.\"*"),
     candy(1, "What did God tell Noah's family to do? And what are these people trying to avoid doing?",
           "Fill the earth (Genesis 9:1). They're trying NOT to be scattered. Let them connect the dots."),
-    opt("Fun fact: Babel and Babylon are the same word in the Bible. Centuries later King Nebuchadnezzar "
+    opt("Fun fact: Babel and Babylon are the same word in the Bible, in the same land, Shinar (Genesis 11:2; "
+        "Daniel 1:2), so it's the same city that became Babylon. Centuries later King Nebuchadnezzar "
         "rebuilt Babylon and stamped HIS NAME into the bricks; museums have them today. *(A connection, "
         "not something Genesis says: the bricks are from long after the tower.)*"),
 
@@ -68,7 +69,8 @@ body = [
     say("One language, one goal, everybody working together, and it was working. "
         "The problem wasn't the teamwork. It was what they were building."),
     ask("Have y'all ever been with a group of friends where everybody agreed to do something stupid?"),
-    opt("If they're stiff and nobody volunteers: *\"Okay, now somebody just 'make up something.'\"* (big air quotes)"),
+    opt("If nobody volunteers: *\"Can somebody just 'make something up'?\"* (big air quotes) "
+        "*\"We know it really happened, but we're gonna pretend you're making it up.\"*"),
     say("Just because everybody agrees doesn't mean everybody is right."),
     note("**Don't read verses 7-9 yet.** Save it for after the game."),
     say("These people had the materials, the manpower, and a plan. But how much of that depended on being "
@@ -116,6 +118,10 @@ body = [
     candy(2, "Did God knock their tower down?",
           "No! The Bible never says the tower fell. Follow up: *Did they run out of bricks? Then what "
           "happened?* Their language was confused, and *\"they left off to build the city.\"*"),
+    opt("If they ask if it's still standing: the Bible doesn't say what happened to it, and nobody knows for "
+        "sure. Babylon later had a huge temple tower that a lot of people connect to Babel. Ancient historians "
+        "say Alexander the Great had it torn down to rebuild it, then he died. Today in Iraq all that's left is "
+        "the outline of its base in the ground. *(Whether that was THE tower, nobody can prove.)*"),
     ask("And what were they trying to avoid in the first place? ...And what happened anyway?"),
     exp("Being scattered. They got scattered."),
     say("Isn't that something? They worked so hard to avoid the very thing God told them to do."),
