@@ -89,7 +89,8 @@ body = [
         "she'll do a final inspection and issue an official approval or rejection."),
     say("Any questions? ...Good. Because I probably wasn't going to answer them anyway. "
         "**LET THE CONSTRUCTION BEGIN!**"),
-    do("**Timer:** 2-minute game, switch every 30 seconds, both run off one Start on my phone. "
+    do("**Timer:** 2-minute game, switch every 30 seconds with a 10-second hands-off pause (screen goes red) "
+       "while the next crew steps up. All one Start on my phone. "
        "**First 30 seconds:** normal talking. At every buzzer after that, the inspector hands the new foreman "
        "a REJECTED sticker. Only the foreman reads it. 2 minutes = 4 crews of 3, so run it twice if there's time "
        "and everybody gets a turn."),
