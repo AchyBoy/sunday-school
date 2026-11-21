@@ -32,15 +32,14 @@ body = [
     '<div class="sub">Genesis 11:1-9 · Series 1: In the Beginning · Ages 14-17, about 30 kids · '
     f"About 29 minutes · Big idea: <b>{esc(BIG)}</b></div>",
     '<div class="sub">Written by Andrew Young · Book: God resists the proud and arrogant</div>',
-    note("**Bring:** 2 firm boards or tables (carpet) · 2 colors of plastic cups · 30-second timer · "
-         "the printed cards · inspector's clipboard, pen, tape measure, fake nose and glasses · candy. "
+    note("**Bring:** 2 firm boards or tables (carpet) · 2 colors of plastic cups · the game timer on my phone (links page) · "
+         "the rejection stickers · inspector's clipboard, pen, tape measure, fake nose and glasses · candy. "
          "**Saturday:** set up both boards and cups in the room and test the stacking. "
-         "**Before class:** brief the inspector, agree when she does the rejection."),
+         "**Before class:** brief the inspector."),
     note("**Who does what (3 ladies from the girls' class):** "
          "**Lady 1 = Building Inspector** (her own sheet). "
-         "**Lady 2 = Boys' station helper**, also runs the 30-second buzzer. "
-         "**Lady 3 = Girls' station helper.** Helpers line up their team in threes, hand each new foreman "
-         "a card, and keep builders from reading cards. I run the lesson and the announcement."),
+         "**Lady 2 = Boys' station helper. Lady 3 = Girls' station helper.** They line up their team in "
+         "threes and keep it moving at every buzzer. I run the timer, the lesson and the announcement."),
     note("**SAY** = how I might put it, not word for word · **DO** = action · **ASK** = question for them · "
          "**ANSWER** = the point I'm fishing for, let THEM find it · **OPTIONAL** = if there's time"),
 
@@ -83,18 +82,17 @@ body = [
     say("Welcome to Babel Construction Company! Each team will build the tallest tower possible with the "
         "materials provided. **THE WINNER WILL BE DETERMINED BY THE FINAL HEIGHT OF THEIR STANDING TOWER.**"),
     say("Now, a few things you need to know. A foreman and two builders work at a time. Every 30 seconds "
-        "the buzzer sounds and all three get replaced. Each new foreman gets a special communication "
-        "instruction that must be followed at all times."),
-    say("Our official building inspector will be inspecting throughout construction. She has the authority "
-        "to issue rejection notices, require modifications, and demand immediate corrections. All rejection "
-        "notices must be communicated by the foreman to the builders. Builders may not read them. At the end "
+        "the buzzer sounds and all three get replaced."),
+    say("Our official building inspector will be inspecting throughout construction. Every new foreman "
+        "gets a rejection notice from her: what's wrong with your tower, and HOW you're allowed to talk "
+        "until the next buzzer. Only the foreman reads it. Builders may not read rejection notices. At the end "
         "she'll do a final inspection and issue an official approval or rejection."),
     say("Any questions? ...Good. Because I probably wasn't going to answer them anyway. "
         "**LET THE CONSTRUCTION BEGIN!**"),
-    do("**First 30 seconds:** normal talking. After the first buzzer, every new foreman gets a secret card. "
-       "Only the foreman reads it."),
-    do("The inspector roams, never stops the game. **About halfway** she fails BOTH towers and hands each "
-       "foreman a rejection notice (5 cups of the other team's color in rows 3-5). It passes to the next foreman."),
+    do("**Timer:** 2-minute game, switch every 30 seconds, both run off one Start on my phone. "
+       "**First 30 seconds:** normal talking. At every buzzer after that, the inspector hands the new foreman "
+       "a REJECTED sticker. Only the foreman reads it. 2 minutes = 4 crews of 3, so run it twice if there's time "
+       "and everybody gets a turn."),
     note("**Only height wins.** Her approvals and rejections don't count. Don't remind them until the end."),
 
     h("Part 4. Who won? Then back to Babel", 6),
@@ -151,7 +149,7 @@ INSPECTOR = [
     p("**Who you are:** an overly serious government inspector. Your job is VERY important "
       "and you have no idea how ridiculous you are."),
     p("**Props:** clipboard, pen for extremely serious notes, tape measure, fake nose and glasses, "
-      "2 REJECTED notices, APPROVED and REJECTED cards."),
+      "the REJECTED stickers, APPROVED and REJECTED signs."),
     note("**The secret:** only HEIGHT wins. Your approvals and rejections don't count at all. "
          "Don't tell them. Never stop the game, keep walking around while they build."),
     "<h2>While they build</h2>",
@@ -165,11 +163,11 @@ INSPECTOR = [
     p("**Tape measure bit:** measure something holding the tape wrong, study it very seriously, then: "
       "*\"According to my calculations, this doorway is approximately... seventeen.\"* "
       "Write it on the clipboard and walk away."),
-    "<h2>About halfway: BOTH towers fail</h2>",
-    p("Adjust your glasses. Concerned noises. *\"Mmmmm. No. No, no, no. Oh dear. This is not good.\"*"),
-    p("**\"BOTH BUILDINGS HAVE FAILED INSPECTION!\"**"),
-    p("Hand each team's CURRENT foreman a rejection notice. Only the foreman reads it. If they "
-      "haven't fixed it when you come back: *\"Still rejected!\"*"),
+    "<h2>Every buzzer: a new foreman, a new rejection</h2>",
+    p("First 30 seconds, no stickers. Then at every buzzer, hand each team's NEW foreman a REJECTED sticker. "
+      "It says what to fix and how they're allowed to talk. Only the foreman reads it. Make a show of it: "
+      "adjust your glasses, concerned noises, *\"Mmmmm. No. No, no, no. Oh dear.\"*"),
+    p("If they haven't fixed it when you come back around: *\"Still rejected!\"*"),
     "<h2>Final inspection</h2>",
     p("Look at both towers: the other-color cups, how it looks, whatever concern you invent. "
       "When time's up, measure both towers first. Andrew asks who won, then asks who passed inspection: "
@@ -186,34 +184,39 @@ INSPECTOR = [
 HELPER = [
     "<h1>Station Helper</h1>",
     f'<div class="sub">{TITLE} · Babel Construction Company · one helper at the boys\' station, one at the girls\'</div>',
-    p("**Your job:** keep your team's line moving and hand out the secret cards. Andrew runs the lesson; "
+    p("**Your job:** keep your team's line moving. Andrew runs the lesson; "
       "the inspector does the funny part. You keep the game running."),
     note("**The secret:** only HEIGHT wins. The inspector's rejections don't count. Don't tell them."),
     "<h2>Before the game</h2>",
     bullets("Andrew sets up both stations Saturday: a firm board, your team's cup color, a few of the other color nearby.",
-            "Get your foreman cards (one set of 10 per team).",
             "When Andrew starts the game, line your team up in groups of 3: a foreman and two builders."),
     "<h2>During the game</h2>",
-    bullets("**Boys' station helper runs the buzzer:** every 30 seconds, call it out loud for BOTH teams.",
-            "**First 30 seconds:** no cards, normal talking.",
-            "**Every buzzer after that:** the 3 at the tower step out, the next 3 step in. Hand the new foreman "
-            "a card, take the old card back. Only the foreman reads it.",
-            "Builders don't read the cards or the rejection notice. Cover it if they peek.",
-            "**When the inspector hands out the rejection notice:** make sure it passes foreman to foreman at "
-            "each buzzer.",
-            "Five rotations gets everyone one turn. Go around again if Andrew says keep going."),
+    bullets("Andrew runs the timer. It buzzes every 30 seconds; the game is 2 minutes.",
+            "**First 30 seconds:** normal talking.",
+            "**Every buzzer:** the 3 at the tower step out, the next 3 step in. The inspector hands the new "
+            "foreman a rejection sticker. Only the foreman reads it, cover it if a builder peeks.",
+            "2 minutes = 4 crews. Andrew may run it twice so everyone gets a turn."),
     "<h2>When time is up</h2>",
     p("Everybody hands off, nobody touches the tower. The inspector measures. Andrew takes it from there."),
 ]
 
 # ---- cards to print and cut ----
-FOREMAN = ["Speak only in questions", "Sing every instruction", "Say your words in reverse order",
-           "Only three words at a time", "Whisper every instruction", "Talk like a robot",
-           "Narrate like a sports announcer", "Say everything dramatically",
-           "Only say yes, no, or maybe", "Put a Bible verse in every instruction"]
+# Each sticker = what to fix + how the foreman may talk (his 11-20 simplification).
+STICKERS = [
+    ("Add 5 cups of the other team's color somewhere in rows 3-5.", "Speak only in questions."),
+    ("Your tower needs a doorway at the bottom.", "Sing every instruction."),
+    ("Add 2 cups of the other team's color to the top.", "Say your words in reverse order."),
+    ("One whole row must be the other team's color.", "Only three words at a time."),
+    ("Add 5 cups of the other team's color somewhere in rows 3-5.", "Whisper every instruction."),
+    ("Your tower needs a window: one cup turned on its side.", "Talk like a robot."),
+    ("Every row needs at least one cup of the other team's color.", "Narrate like a sports announcer."),
+    ("Add 3 cups of the other team's color anywhere you can see them.", "Say everything dramatically."),
+    ("Your doorway is not ADA compliant. Make it wider.", "Only say yes, no, or maybe."),
+    ("Add 5 cups of the other team's color somewhere in rows 3-5.", "Quote a Bible verse every time."),
+]
 CARD_CSS = """
 .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
-.card { border: 1.5px dashed #888; height: 1.8in; padding: 12pt; box-sizing: border-box;
+.card { border: 1.5px dashed #888; height: 1.8in; padding: 8pt 10pt; overflow: hidden; box-sizing: border-box;
         display: flex; flex-direction: column; justify-content: center; text-align: center; }
 .card .k { font-size: 10pt; letter-spacing: 1pt; color: #8a4b2a; font-weight: 800; }
 .card .t { font-size: 21pt; font-weight: 800; margin-top: 6pt; }
@@ -227,18 +230,16 @@ CARD_CSS = """
          font-size: 72pt; font-weight: 900; border: 8px solid; margin-bottom: 0.3in; }
 """
 cards = "".join(
-    f'<div class="card"><div class="k">FOREMAN ONLY · DON\'T SHOW YOUR BUILDERS</div>'
-    f'<div class="t">{esc(t)}</div><div class="s">Babel Construction Co.</div></div>'
-    for t in FOREMAN)
-REJ = ('<div class="rej"><div class="d">BABEL BUILDING DEPARTMENT</div><div class="big">INSPECTION FAILED</div>'
-       '<div class="v">VIOLATION #11-4B</div><div class="body">This structure must contain a minimum of '
-       "<b>FIVE cups of the opposing team's color</b>, located somewhere in <b>rows 3-5</b>.</div>"
-       '<div class="body"><b>Correct immediately.</b><br>Construction may continue during repairs.</div>'
-       '<div class="s">Foreman only. Pass this to the next foreman.</div></div>')
+    f'<div class="card"><div class="k" style="color:#b71c1c;font-size:13pt;letter-spacing:2pt">REJECTED</div><div class="s" style="margin-top:0">Violation #11-{n+1} · <b>foreman only</b></div>'
+    f'<div class="s" style="font-size:12pt;color:#111;margin-top:4pt;font-weight:600">{esc(fix)}</div>'
+    f'<div class="k" style="margin-top:6pt;font-size:8pt">UNTIL THE NEXT BUZZER, THE FOREMAN MUST:</div>'
+    f'<div class="t" style="font-size:15pt;margin-top:1pt">{esc(talk)}</div>'
+    f'</div>'
+    for n, (fix, talk) in enumerate(STICKERS))
 PRINT = (f"<style>{CARD_CSS}</style>"
-         '<div class="sub">Cut on the dashed lines. 2 of each foreman card (one set per team).</div>'
+         '<div class="sub">REJECTED stickers: print on full-sheet sticker paper (or plain paper) and cut on '
+         'the dashed lines. 2 pages = one set per team.</div>'
          f'<div class="grid">{cards}</div><div class="pb"></div><div class="grid">{cards}</div>'
-         f'<div class="pb"></div>{REJ}{REJ}'
          '<div class="pb"></div><div class="stamp" style="color:#2e7d32;border-color:#2e7d32">APPROVED</div>'
          '<div class="stamp" style="color:#2e7d32;border-color:#2e7d32">APPROVED</div>'
          '<div class="pb"></div><div class="stamp" style="color:#b71c1c;border-color:#b71c1c">REJECTED</div>'
