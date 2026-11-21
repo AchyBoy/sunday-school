@@ -54,10 +54,14 @@ body = [
     exp("*\"Let us make us a name.\"*"),
     candy(1, "What did God tell Noah's family to do? And what are these people trying to avoid doing?",
           "Fill the earth (Genesis 9:1). They're trying NOT to be scattered. Let them connect the dots."),
-    opt("Fun fact: Babel and Babylon are the same word in the Bible, in the same land, Shinar (Genesis 11:2; "
-        "Daniel 1:2), so it's the same city that became Babylon. Centuries later King Nebuchadnezzar "
-        "rebuilt Babylon and stamped HIS NAME into the bricks; museums have them today. *(A connection, "
-        "not something Genesis says: the bricks are from long after the tower.)*"),
+    funfact("The oldest picture of Babylon's tower",
+        "Babel and Babylon are the same word in the Bible, in the same land, Shinar. About 600 BC, King "
+        "Nebuchadnezzar (the king from Daniel) had a black stone carved with HIMSELF standing next to Babylon's "
+        "giant temple tower, about 300 feet tall. The writing says he finished it *\"by raising its summit to "
+        "the sky.\"* Sound familiar? *\"whose top may reach unto heaven.\"*",
+        "**Hold up the printed picture.** *For me:* it's called the Tower of Babel Stele. Nobody can prove "
+        "Babylon's tower is THE tower, and a few scholars have questioned the stone itself, so I say "
+        "\"many people think.\""),
 
     h("Part 2. They were united", 4),
     scripture("Genesis 11:5-6"),
@@ -117,10 +121,12 @@ body = [
     candy(2, "Did God knock their tower down?",
           "No! The Bible never says the tower fell. Follow up: *Did they run out of bricks? Then what "
           "happened?* Their language was confused, and *\"they left off to build the city.\"*"),
-    opt("If they ask if it's still standing: the Bible doesn't say what happened to it, and nobody knows for "
-        "sure. Babylon later had a huge temple tower that a lot of people connect to Babel. Ancient historians "
-        "say Alexander the Great had it torn down to rebuild it, then he died. Today in Iraq all that's left is "
-        "the outline of its base in the ground. *(Whether that was THE tower, nobody can prove.)*"),
+    opt("If they ask what happened to it: the Bible doesn't say. It never says it fell, they just quit. "
+        "Babylon's big tower (the one in the picture) was still there almost 300 years later, when **Alexander the Great**, "
+        "who conquered most of the world, decided to rebuild it. An ancient writer says just clearing the rubble "
+        "would have taken 10,000 men two months. Alexander died in Babylon in 323 BC, in Nebuchadnezzar's old "
+        "palace, before it was ever rebuilt. Today only the outline of its base is left in the ground in Iraq. "
+        "*(History, not the Bible.)*"),
     ask("And what were they trying to avoid in the first place? ...And what happened anyway?"),
     exp("Being scattered. They got scattered."),
     say("Isn't that something? They worked so hard to avoid the very thing God told them to do."),
@@ -141,6 +147,11 @@ body = [
         "for themselves. Both had plans. Both were builders. Both worked toward a goal. But only one was "
         "following God's instructions."),
     p(f"**{BIG}**"),
+
+    h("Extra fun facts, if they ask"),
+    opt("**The famous painting:** the Tower of Babel painting by Bruegel (1563) was modeled on Rome's Colosseum. "
+        "That's why so many pictures of Babel look like a stacked-up Colosseum."),
+    opt("**\"Babble\" doesn't come from \"Babel.\"** Everybody thinks so, but the English word just imitates baby talk."),
 ]
 
 # ---- the inspector's sheet (a teacher plays her) ----
@@ -254,10 +265,11 @@ to_pdf(page(TITLE, "".join(body)), os.path.join(out, "1.5 Teacher - The Tower of
 to_pdf(page("Inspector", "".join(INSPECTOR)), os.path.join(out, "Part - Inspector.pdf"))
 to_pdf(page("Station Helper", "".join(HELPER)), os.path.join(out, "Part - Station helper.pdf"))
 to_pdf(page("Cards to print", PRINT), os.path.join(out, "Part - Cards to print.pdf"))
+import subprocess; subprocess.run([sys.executable, os.path.join(HERE, "stele.py")], check=True)  # wiped above, rebuild
 FINAL = False
 open(os.path.join(HERE, "index.html"), "w").write(web_page(
     os.path.basename(HERE), TITLE, "".join(body),
-    ["Part - Inspector.pdf", "Part - Station helper.pdf", "Part - Cards to print.pdf"], final=FINAL))
+    ["Part - Inspector.pdf", "Part - Station helper.pdf", "Part - Cards to print.pdf", "Part - Picture of the tower (print).pdf"], final=FINAL))
 mark = os.path.join(HERE, "FINAL")
 if FINAL:
     open(mark, "w").close()
