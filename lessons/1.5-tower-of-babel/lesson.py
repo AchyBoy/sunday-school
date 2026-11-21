@@ -203,16 +203,16 @@ HELPER = [
 # ---- cards to print and cut ----
 # Each sticker = what to fix + how the foreman may talk (his 11-20 simplification).
 STICKERS = [
-    ("Add 5 cups of the other team's color somewhere in rows 3-5.", "Speak only in questions."),
-    ("Your tower needs a doorway at the bottom.", "Sing every instruction."),
-    ("Add 2 cups of the other team's color to the top.", "Say your words in reverse order."),
-    ("One whole row must be the other team's color.", "Only three words at a time."),
-    ("Add 5 cups of the other team's color somewhere in rows 3-5.", "Whisper every instruction."),
-    ("Your tower needs a window: one cup turned on its side.", "Talk like a robot."),
-    ("Every row needs at least one cup of the other team's color.", "Narrate like a sports announcer."),
-    ("Add 3 cups of the other team's color anywhere you can see them.", "Say everything dramatically."),
-    ("Your doorway is not ADA compliant. Make it wider.", "Only say yes, no, or maybe."),
-    ("Add 5 cups of the other team's color somewhere in rows 3-5.", "Quote a Bible verse every time."),
+    ("Bottom row needs 1 cup of the other team's color.", "Speak only in questions."),
+    ("Row 2 needs 1 cup of the other team's color.", "Sing every instruction."),
+    ("Row 3 needs 2 cups of the other team's color.", "Say your words in reverse order."),
+    ("Bottom row needs 2 cups of the other team's color.", "Only three words at a time."),
+    ("Row 4 needs 2 cups of the other team's color.", "Whisper every instruction."),
+    ("Row 2 needs 2 cups of the other team's color.", "Talk like a robot."),
+    ("Row 3 needs 1 cup of the other team's color.", "Narrate like a sports announcer."),
+    ("Top cup must be the other team's color.", "Say everything dramatically."),
+    ("Row 5 needs 2 cups of the other team's color.", "Only say yes, no, or maybe."),
+    ("Bottom row needs 3 cups of the other team's color.", "Quote a Bible verse every time."),
 ]
 CARD_CSS = """
 .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
