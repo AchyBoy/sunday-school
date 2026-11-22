@@ -48,7 +48,6 @@ body = [
     note("**SAY** = how I might put it, not word for word · **DO** = action · **ASK** = question for them · "
          "**ANSWER** = the point I'm fishing for, let THEM find it · **OPTIONAL** = if there's time"),
 
-    U(note("**Yellow = changed this round (11-21 notes, round 2).**")),
     h("Part 1. Noah, then a new group of builders", 5),
     ask("Alright, who remembers what we talked about last lesson? What did Noah build?"),
     ask("Who told him to build it?"),
@@ -60,7 +59,7 @@ body = [
     O(exp("*\"Let us make us a name, lest we be scattered abroad upon the face of the whole earth.\"*")),
     candy(1, "What did God tell Noah's family to do? And what are these people trying to avoid doing?",
           "Fill the earth (Genesis 9:1). They're trying NOT to be scattered. Let them connect the dots."),
-    U(funfact("The oldest picture of Babylon's tower",
+    O(funfact("The oldest picture of Babylon's tower",
         "Babel and Babylon are the same word in Hebrew, and the Bible puts both in the land of Shinar: "
         "Babel in Genesis 11:2 and 11:9, and Babylon's king carries the temple treasures *\"into the land of "
         "Shinar\"* in Daniel 1:2. About 600 BC, King Nebuchadnezzar (the king from Daniel) had a black stone "
@@ -90,13 +89,13 @@ body = [
     O(say("Alright, we're gonna play a little game. Boys against girls. It's called Babel Construction Company. "
         "**Whoever has the tallest standing tower when time's up wins.**")),
     O(do("One station each. One **foreman** + two **builders** per team, the rest line up in threes.")),
-    U(say("Now, a few things you need to know. A foreman and two builders work at a time. Every 30 seconds "
+    O(say("Now, a few things you need to know. A foreman and two builders work at a time. Every 30 seconds "
         "the buzzer sounds, and you have 10 seconds to swap in the next three.")),
     say("Our official building inspector will be inspecting throughout construction. Every new foreman "
         "gets a rejection notice from her: what's wrong with your tower, and HOW you're allowed to talk "
         "until the next buzzer. Only the foreman reads it. Builders may not read rejection notices. At the end "
         "she'll do a final inspection and issue an official approval or rejection."),
-    U(say("Any questions? ...Good. Because I probably wasn't going to answer them anyway. "
+    O(say("Any questions? ...Good. Because I probably wasn't going to answer them anyway. "
         "Alright, is everyone ready? ...**LET THE CONSTRUCTION BEGIN!**")),
     do("**Timer:** 2-minute game, switch every 30 seconds with a 10-second hands-off pause (screen goes red) "
        "while the next crew steps up. All one Start on my phone. "
@@ -108,7 +107,7 @@ body = [
     h("Part 4. Who won? Then back to Babel", 6),
     do("Time's up, everybody stops. Inspector measures both towers."),
     ask("Alright, who won?"),
-    U(do("Offer a rematch, now that they know only the tallest wins.")),
+    O(do("Offer a rematch, now that they know only the tallest wins.")),
     ask("Wait a minute. Is passing inspection how I said you win?"),
     ask("Then why were y'all so worried about that inspector?"),
     opt("Let them explain themselves. Have fun with it."),
@@ -119,7 +118,7 @@ body = [
     ask("And what had God already told Noah's family to do?"),
     say("Now watch what God does."),
     scripture("Genesis 11:7-9"),
-    U(opt("Did y'all catch verse 7? They said *\"let us build\"* (verse 4). God said *\"let us go down.\"*")),
+    O(opt("Did y'all catch verse 7? They said *\"let us build\"* (verse 4). God said *\"let us go down.\"*")),
     candy(2, "Did God knock their tower down?",
           "No! The Bible never says the tower fell. Follow up: *Did they run out of bricks? Then what "
           "happened?* Their language was confused, and *\"they left off to build the city.\"*"),
