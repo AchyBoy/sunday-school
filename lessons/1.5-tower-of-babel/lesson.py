@@ -21,7 +21,9 @@ p.cue.ask { font-weight: 700; }
 </style>"""
 def _cue(cls, tag, text):
     return f'<p class="cue {cls}"><span class="tag t-{cls}">{tag}</span>{md(text)}</p>'
-def U(html):  # yellow = changed since his last round of notes
+def O(html):  # changed in an earlier round, no longer highlighted
+    return html
+def U(html):  # yellow = changed this round
     return html.replace('class="', 'class="upd ', 1)
 def say(t): return _cue("say", "SAY", t)
 def do(t): return _cue("do", "DO", t)
@@ -46,7 +48,7 @@ body = [
     note("**SAY** = how I might put it, not word for word · **DO** = action · **ASK** = question for them · "
          "**ANSWER** = the point I'm fishing for, let THEM find it · **OPTIONAL** = if there's time"),
 
-    U(note("**Yellow = changed from your 11-21 notes.**")),
+    U(note("**Yellow = changed this round (11-21 notes, round 2).**")),
     h("Part 1. Noah, then a new group of builders", 5),
     ask("Alright, who remembers what we talked about last lesson? What did Noah build?"),
     ask("Who told him to build it?"),
@@ -55,7 +57,7 @@ body = [
     say("Okay, keep that in mind, because we're about to meet another group of builders."),
     scripture("Genesis 11:1-4"),
     ask("What are these people trying to build? Why do they say they want to build it?"),
-    U(exp("*\"Let us make us a name, lest we be scattered abroad upon the face of the whole earth.\"*")),
+    O(exp("*\"Let us make us a name, lest we be scattered abroad upon the face of the whole earth.\"*")),
     candy(1, "What did God tell Noah's family to do? And what are these people trying to avoid doing?",
           "Fill the earth (Genesis 9:1). They're trying NOT to be scattered. Let them connect the dots."),
     U(funfact("The oldest picture of Babylon's tower",
@@ -65,7 +67,7 @@ body = [
         "carved with HIMSELF standing next to Babylon's giant temple tower, about 300 feet tall. As far as we can "
         "tell, that tower stood where Babel was. The writing says he finished it *\"by raising its summit to "
         "the sky.\"* Sound familiar? *\"whose top may reach unto heaven.\"*",
-        "**Hold up the printed picture.**")),
+        "**Hand a printed copy to each side.** It's worn and hard to read; the printout says so.")),
 
     h("Part 2. They were united", 4),
     scripture("Genesis 11:5-6"),
@@ -73,7 +75,7 @@ body = [
         "They built a tower *\"whose top may reach unto heaven.\"* And verse 5 says *\"the LORD came "
         "down to see\"* it. Their biggest thing ever, and God still had to come down to look at it.",
         ),
-    U(say("One language, one goal, everybody pulling the same way. And it was working. Working together is a "
+    O(say("One language, one goal, everybody pulling the same way. And it was working. Working together is a "
         "good thing! God even says nothing would stop them. But look at what they teamed up to do: God said "
         "spread out, and they were working together to stay put.")),
     ask("Have y'all ever been with a group of friends where everybody agreed to do something stupid?"),
@@ -85,17 +87,17 @@ body = [
         "able to understand each other? ...Well, we're about to find out."),
 
     h("Part 3. Babel Construction Company", 10),
-    U(say("Alright, we're gonna play a little game. Boys against girls. It's called Babel Construction Company. "
+    O(say("Alright, we're gonna play a little game. Boys against girls. It's called Babel Construction Company. "
         "**Whoever has the tallest standing tower when time's up wins.**")),
-    U(do("One station each. One **foreman** + two **builders** per team, the rest line up in threes.")),
-    say("Now, a few things you need to know. A foreman and two builders work at a time. Every 30 seconds "
-        "the buzzer sounds and all three get replaced."),
+    O(do("One station each. One **foreman** + two **builders** per team, the rest line up in threes.")),
+    U(say("Now, a few things you need to know. A foreman and two builders work at a time. Every 30 seconds "
+        "the buzzer sounds, and you have 10 seconds to swap in the next three.")),
     say("Our official building inspector will be inspecting throughout construction. Every new foreman "
         "gets a rejection notice from her: what's wrong with your tower, and HOW you're allowed to talk "
         "until the next buzzer. Only the foreman reads it. Builders may not read rejection notices. At the end "
         "she'll do a final inspection and issue an official approval or rejection."),
-    say("Any questions? ...Good. Because I probably wasn't going to answer them anyway. "
-        "**LET THE CONSTRUCTION BEGIN!**"),
+    U(say("Any questions? ...Good. Because I probably wasn't going to answer them anyway. "
+        "Alright, is everyone ready? ...**LET THE CONSTRUCTION BEGIN!**")),
     do("**Timer:** 2-minute game, switch every 30 seconds with a 10-second hands-off pause (screen goes red) "
        "while the next crew steps up. All one Start on my phone. "
        "**First 30 seconds:** normal talking. At every buzzer after that, the inspector hands the new foreman "
@@ -106,7 +108,7 @@ body = [
     h("Part 4. Who won? Then back to Babel", 6),
     do("Time's up, everybody stops. Inspector measures both towers."),
     ask("Alright, who won?"),
-    U(do("Inspector judges both towers her way, no script. Offer a rematch if there's time.")),
+    U(do("Offer a rematch, now that they know only the tallest wins.")),
     ask("Wait a minute. Is passing inspection how I said you win?"),
     ask("Then why were y'all so worried about that inspector?"),
     opt("Let them explain themselves. Have fun with it."),
@@ -117,24 +119,22 @@ body = [
     ask("And what had God already told Noah's family to do?"),
     say("Now watch what God does."),
     scripture("Genesis 11:7-9"),
-    U(opt("Did y'all catch verse 7? *\"Go to, let us go down.\"* The people said *\"Go to, let us\"* twice: "
-        "*let us make brick* (verse 3), *let us build* (verse 4). Then God says *\"Go to, let us\"* one time, "
-        "and the whole project is over. They said *let us build up.* God said *let us go down.*")),
+    U(opt("Did y'all catch verse 7? They said *\"let us build\"* (verse 4). God said *\"let us go down.\"*")),
     candy(2, "Did God knock their tower down?",
           "No! The Bible never says the tower fell. Follow up: *Did they run out of bricks? Then what "
           "happened?* Their language was confused, and *\"they left off to build the city.\"*"),
-    U(opt("If they ask what happened to it: the Bible doesn't say. It never says it fell, they just quit. "
+    O(opt("If they ask what happened to it: the Bible doesn't say. It never says it fell, they just quit. "
         "Babylon's big tower (the one in the picture) was still there almost 300 years later, when **Alexander the Great**, "
         "who conquered most of the world, decided to rebuild it. Strabo, a Greek history writer from around the "
         "time of Jesus, says just clearing the rubble would have taken 10,000 men two months. Alexander died in Babylon in 323 BC, in Nebuchadnezzar's old "
         "palace, before it was ever rebuilt. Today, what we believe is its footprint is still in the ground in Iraq. "
         "*(History, not the Bible.)*")),
-    U(ask("And what were they trying to avoid in the first place?")),
-    U(exp("Being scattered.")),
-    U(ask("And what happened anyway?")),
-    U(exp("They got scattered.")),
+    O(ask("And what were they trying to avoid in the first place?")),
+    O(exp("Being scattered.")),
+    O(ask("And what happened anyway?")),
+    O(exp("They got scattered.")),
     say("Isn't that something? They worked so hard to avoid the very thing God told them to do."),
-    U(say("You can have a good plan, good friends, and everybody working together. But before you start "
+    O(say("You can have a good plan, good friends, and everybody working together. But before you start "
         "building anything, talk to God about it first. Make sure it's the direction He wants you to go.")),
 
     h("Part 5. Pride, and asking God first", 4),
@@ -150,7 +150,7 @@ body = [
     say("Last lesson, Noah built because God told him to. This lesson, the people at Babel built to make a name "
         "for themselves. Both had plans. Both were builders. Both worked toward a goal. But only one was "
         "following God's instructions."),
-    U(scripture("Psalm 127:1")),
+    O(scripture("Psalm 127:1")),
     p(f"**{BIG}**"),
 
     h("Extra fun facts, if they ask"),

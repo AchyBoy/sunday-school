@@ -32,6 +32,7 @@ body = f"""<style>{CSS}</style>
   <div class="side">
     <h1>The oldest picture of Babylon's tower</h1>
     <div class="when">Black stone · about 600 BC · 2,600 years old</div>
+    <p><b>It's worn and hard to see after 2,600 years.</b> Look for the king's tall pointed hat at the top right.</p>
     <p>Carved for <b>King Nebuchadnezzar</b>, the king from the book of Daniel. He stands on the right.
        Next to him is Babylon's giant temple tower, drawn in steps, about 300 feet tall.</p>
     <p>The writing says he finished the tower</p>
