@@ -31,6 +31,16 @@ def ask(t): return _cue("ask", "ASK", t)
 def exp(t): return _cue("exp", "ANSWER", t)
 def opt(t): return _cue("opt", "OPTIONAL", t)
 
+import base64
+_b64 = lambda f: base64.b64encode(open(os.path.join(HERE, "img", f), "rb").read()).decode()
+# Both images are free to reuse: photo CC0 (Marjon Verburg), plan public domain (Koldewey dig).
+FOOTPRINT = (
+    '<div style="break-inside:avoid;margin:8pt 0"><div style="display:flex;gap:8pt;align-items:flex-start">'
+    f'<img alt="What historians believe is the base of the tower today, in Iraq" style="width:62%" src="data:image/jpeg;base64,{_b64("footprint.jpg")}">'
+    f'<img alt="Old dig plan, the tower is the dark square" style="width:33%" src="data:image/png;base64,{_b64("plan.png")}"></div>'
+    '<div style="font-size:10pt;color:#555;margin-top:3pt">Left: what historians believe is part of the base today, in Iraq, filled with water. '
+    'Right: the old dig plan, the tower is the dark square. (Photo: Marjon Verburg, CC0. Plan: Robert Koldewey, public domain.)</div></div>')
+
 body = [
     CUE_CSS,
     f"<h1>{TITLE}</h1>",
@@ -62,10 +72,11 @@ body = [
     O(funfact("The oldest picture of Babylon's tower",
         "Babel and Babylon are the same word in Hebrew, and the Bible puts both in the land of Shinar: "
         "Babel in Genesis 11:2 and 11:9, and Babylon's king carries the temple treasures *\"into the land of "
-        "Shinar\"* in Daniel 1:2. About 600 BC, King Nebuchadnezzar (the king from Daniel) had a black stone "
-        "carved with HIMSELF standing next to Babylon's giant temple tower, about 300 feet tall. As far as we can "
-        "tell, that tower stood where Babel was. The writing says he finished it *\"by raising its summit to "
-        "the sky.\"* Sound familiar? *\"whose top may reach unto heaven.\"*",
+        "Shinar\"* in Daniel 1:2. Historians believe that about 600 BC, King Nebuchadnezzar (the king from Daniel) "
+        "had a black stone carved with HIMSELF standing next to Babylon's giant temple tower. They believe it stood "
+        "somewhere between 200 and 300 feet tall, and many believe it's tied to the Tower of Babel. In the museum's "
+        "translation, he says he finished it *\"by raising its summit to the sky.\"* "
+        "Sound familiar? *\"whose top may reach unto heaven.\"*",
         "**Hand a printed copy to each side.** It's worn and hard to read; the printout says so.")),
 
     h("Part 2. They were united", 4),
@@ -123,11 +134,12 @@ body = [
           "No! The Bible never says the tower fell. Follow up: *Did they run out of bricks? Then what "
           "happened?* Their language was confused, and *\"they left off to build the city.\"*"),
     O(opt("If they ask what happened to it: the Bible doesn't say. It never says it fell, they just quit. "
-        "Almost 300 years later, Babylon's big tower (the one in the picture) was in ruins. **Alexander the Great**, "
-        "who conquered most of the world, decided to rebuild it. Strabo, a Greek history writer from around the "
-        "time of Jesus, says just clearing the rubble would have taken 10,000 men two months. Alexander died in Babylon in 323 BC, in Nebuchadnezzar's old "
-        "palace, before it was ever rebuilt. Today, what we believe is its footprint is still in the ground in Iraq. "
-        "*(History, not the Bible.)*")),
+        "Historians believe Babylon's big tower (the one in the picture) was in ruins almost 300 years later, when "
+        "**Alexander the Great**, who conquered most of the world, decided to rebuild it. Strabo, a Greek history writer "
+        "from around the time of Jesus, says just clearing the rubble was a job for 10,000 men for two months. Alexander "
+        "died in Babylon in 323 BC, historians believe in Nebuchadnezzar's old palace, before it was ever rebuilt. "
+        "Today, what historians believe is its footprint is still in the ground in Iraq. *(History, not the Bible.)*")),
+    FOOTPRINT,
     O(ask("And what were they trying to avoid in the first place?")),
     O(exp("Being scattered.")),
     O(ask("And what happened anyway?")),
@@ -153,7 +165,7 @@ body = [
     p(f"**{BIG}**"),
 
     h("Extra fun facts, if they ask"),
-    opt("**\"Babble\" doesn't come from \"Babel.\"** Everybody thinks so, but the English word just imitates baby talk."),
+    opt("**\"Babble\" doesn't come from \"Babel.\"** Everybody thinks so, but word historians believe it just imitates baby talk."),
 ]
 
 # ---- the inspector's sheet (a teacher plays her) ----
