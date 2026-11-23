@@ -123,7 +123,7 @@ body = [
           "No! The Bible never says the tower fell. Follow up: *Did they run out of bricks? Then what "
           "happened?* Their language was confused, and *\"they left off to build the city.\"*"),
     O(opt("If they ask what happened to it: the Bible doesn't say. It never says it fell, they just quit. "
-        "Babylon's big tower (the one in the picture) was still there almost 300 years later, when **Alexander the Great**, "
+        "Almost 300 years later, Babylon's big tower (the one in the picture) was in ruins. **Alexander the Great**, "
         "who conquered most of the world, decided to rebuild it. Strabo, a Greek history writer from around the "
         "time of Jesus, says just clearing the rubble would have taken 10,000 men two months. Alexander died in Babylon in 323 BC, in Nebuchadnezzar's old "
         "palace, before it was ever rebuilt. Today, what we believe is its footprint is still in the ground in Iraq. "
